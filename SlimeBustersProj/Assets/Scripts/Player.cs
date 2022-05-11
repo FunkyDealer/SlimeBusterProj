@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private GameObject Camera;
+    private GameObject camera;
 
     [Header("Movement")]
     [SerializeField]
@@ -34,9 +34,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
     public int MaxHealth => maxHealth;
-   
 
 
+    [SerializeField]
+    VacuumCleaner cleaner;
 
 
     // Start is called before the first frame update
@@ -57,7 +58,7 @@ public class Player : MonoBehaviour
         }
         if (!attack)
         {
-            attack = Input.GetButtonDown("Fire1");
+            attack = Input.GetButton("Fire1");
         }
         if (!interact)
         {
@@ -69,21 +70,42 @@ public class Player : MonoBehaviour
     {
         input = Vector2.ClampMagnitude(input, 1);
         float dirY = myRigidbody.velocity.y;
-        direction = Camera.transform.right * input.x + Camera.transform.forward * input.y;       
+        direction = camera.transform.right * input.x + camera.transform.forward * input.y;       
         direction *= currentMovementSpeed;
         direction.y = dirY;
 
         myRigidbody.velocity = direction;
 
-        //make player look where they go
-        Vector3 lookDir = new Vector3(direction.x, 0, direction.z);
-        Quaternion rotation = Quaternion.LookRotation(lookDir, transform.up);
-        transform.rotation = rotation;
+        if (!attack)
+        {
+            //make player look where they go        
+            Vector3 lookDir = new Vector3(direction.x, 0, direction.z);
+            if (lookDir != Vector3.zero)
+            {
+                Quaternion rotation = Quaternion.LookRotation(lookDir, transform.up);
+                transform.rotation = rotation;
+            }
 
-        //make player look at mouse
-        Vector2 mousePos = Input.mousePosition;
+            
+            if (cleaner.Active) cleaner.Deactivate();
+        }
+        else
+        {
+            //make player look at point where mouse is clicking
+            Vector3 lookDir = Vector3.zero;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit raycastHit))
+            {
+                lookDir = raycastHit.point - transform.position;
+            }
+
+            lookDir = new Vector3(lookDir.x, 0, lookDir.z);
+            Quaternion rotation = Quaternion.LookRotation(lookDir, transform.up);
+            transform.rotation = rotation;
 
 
+            if (!cleaner.Active) cleaner.Activate();
+        }
 
         ResetInput();
     }

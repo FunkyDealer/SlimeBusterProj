@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlueSlime : Slime
+public class BlueSlime : Slime, IVacuumable
 {
     enum S_State
     {
@@ -31,5 +31,12 @@ public class BlueSlime : Slime
         yield return new WaitForSeconds(activationTime);
 
         currentAIState = S_State.Wandering;
+    }
+
+    public override void GetVacuumed()
+    {
+        base.GetVacuumed();
+
+
     }
 }
