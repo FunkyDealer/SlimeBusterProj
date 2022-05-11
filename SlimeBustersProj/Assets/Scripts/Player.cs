@@ -75,9 +75,14 @@ public class Player : MonoBehaviour
 
         myRigidbody.velocity = direction;
 
+        //make player look where they go
         Vector3 lookDir = new Vector3(direction.x, 0, direction.z);
         Quaternion rotation = Quaternion.LookRotation(lookDir, transform.up);
         transform.rotation = rotation;
+
+        //make player look at mouse
+        Vector2 mousePos = Input.mousePosition;
+
 
 
         ResetInput();
