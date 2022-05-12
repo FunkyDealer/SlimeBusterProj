@@ -51,4 +51,15 @@ public class Slime : MonoBehaviour, IVacuumable
     {
         Destroy(gameObject);
     }
+
+
+    protected void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player")) {
+
+            collision.gameObject.GetComponent<Player>().GetDamage(damage, transform.position);
+
+        }
+    }
+
 }

@@ -50,7 +50,8 @@ public class VacuumCleaner : MonoBehaviour
     {
         if (other.CompareTag("Vacuumable")) {
 
-            other.gameObject.GetComponent<IVacuumable>().GetVacuumed();
+            if (Active) other.gameObject.GetComponent<IVacuumable>().GetVacuumed();
+
 
 
 

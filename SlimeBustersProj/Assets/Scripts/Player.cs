@@ -29,22 +29,43 @@ public class Player : MonoBehaviour
     //Player stuff
     private bool isAlive = true;
     //health
-    private float currenthealth = 100;
-    public float CurrentHealth => currenthealth;
+    private int currenthealth = 3;
+    public int CurrentHealth => currenthealth;
     [SerializeField]
-    private int maxHealth = 100;
+    private int maxHealth = 3;
     public int MaxHealth => maxHealth;
+
+    bool canBeDamaged = true;
+    float InvincibleTime = 3;
+    bool beingLaunched = false;
 
 
     [SerializeField]
     VacuumCleaner cleaner;
 
 
+    [Header("Hud Connections")]
+    [SerializeField]
+    private HUD_HealthDisplay healthDisplay;
+    [SerializeField]
+    private HUD_RemainingSlimesDisplay remainingSlimesDisplay;
+
+
+    private void Awake()
+    {
+        currenthealth = maxHealth;
+        canBeDamaged = true;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         myRigidbody = GetComponent<Rigidbody>();
 
+        
+
+        healthDisplay.UpdateHealthDisplay(currenthealth, maxHealth);
+        remainingSlimesDisplay.UpdateSlimesDisplay(99);
 
     }
 
@@ -68,9 +89,11 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!beingLaunched)
+        { 
         input = Vector2.ClampMagnitude(input, 1);
         float dirY = myRigidbody.velocity.y;
-        direction = camera.transform.right * input.x + camera.transform.forward * input.y;       
+        direction = camera.transform.right * input.x + camera.transform.forward * input.y;
         direction *= currentMovementSpeed;
         direction.y = dirY;
 
@@ -86,7 +109,7 @@ public class Player : MonoBehaviour
                 transform.rotation = rotation;
             }
 
-            
+
             if (cleaner.Active) cleaner.Deactivate();
         }
         else
@@ -106,6 +129,11 @@ public class Player : MonoBehaviour
 
             if (!cleaner.Active) cleaner.Activate();
         }
+    }
+        else
+        {
+
+        }
 
         ResetInput();
     }
@@ -115,6 +143,51 @@ public class Player : MonoBehaviour
         jump = false;
         attack = false;
         interact = false;
+    }
+
+    public void GetDamage(int damage, Vector3 enemyPosition)
+    {
+        if (canBeDamaged)
+        {
+            canBeDamaged = false;
+            currenthealth -= damage;
+            healthDisplay.UpdateHealthDisplay(currenthealth, maxHealth);
+
+            if (currenthealth > 0)
+            {
+                StartCoroutine(RegainVulnerability());
+            }
+            else
+            {
+                Die();
+            }
+        }
+
+        Vector3 launchDirection = transform.position - enemyPosition;
+        launchDirection.Normalize();
+
+        myRigidbody.AddForce(launchDirection * 10, ForceMode.VelocityChange);
+        beingLaunched = true;
+        StartCoroutine(RegainMotion());
+    }
+
+    private IEnumerator RegainVulnerability()
+    {
+        yield return new WaitForSeconds(InvincibleTime);
+
+        canBeDamaged = true;        
+    }
+
+    private IEnumerator RegainMotion()
+    {
+        yield return new WaitForSeconds(1);
+
+        beingLaunched = false;
+    }
+
+    private void Die()
+    {
+        Debug.Log("Player Died");
     }
 
 }
