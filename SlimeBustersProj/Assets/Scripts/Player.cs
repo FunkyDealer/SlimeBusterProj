@@ -13,6 +13,15 @@ public class Player : MonoBehaviour
     private float currentMovementSpeed = 10;
     [SerializeField, Min(0.01f)]
     private float movSmoothLerp = 0.03f;
+    [SerializeField]
+    private float jumpForce = 5f;
+    private bool jumping = false; //is the playing curenttly in a jump?
+
+    [SerializeField]
+    Transform feetPos;
+
+    private bool beingLaunched = false;
+    private bool isGrounded = false;
 
     private Vector3 direction;
     private Rigidbody myRigidbody;
@@ -37,7 +46,7 @@ public class Player : MonoBehaviour
 
     bool canBeDamaged = true;
     float InvincibleTime = 3;
-    bool beingLaunched = false;
+
 
 
     [SerializeField]
@@ -73,7 +82,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (!jump)
+        if (!jump && !jumping && isGrounded)
         {
             jump = Input.GetButtonDown("Jump");
         }
@@ -89,6 +98,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        isGrounded = CheckIsGround();
+        if (isGrounded) jumping = false;
+
         if (!beingLaunched)
         { 
         input = Vector2.ClampMagnitude(input, 1);
@@ -99,6 +111,12 @@ public class Player : MonoBehaviour
 
         myRigidbody.velocity = direction;
 
+            if (jump) {
+                myRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+                jump = false;
+                jumping = true;
+            }
+    
         if (!attack)
         {
             //make player look where they go        
@@ -124,7 +142,7 @@ public class Player : MonoBehaviour
 
             lookDir = new Vector3(lookDir.x, 0, lookDir.z);
             Quaternion rotation = Quaternion.LookRotation(lookDir, transform.up);
-            transform.rotation = rotation;
+            transform.rotation = rotation;            
 
 
             if (!cleaner.Active) cleaner.Activate();
@@ -136,6 +154,11 @@ public class Player : MonoBehaviour
         }
 
         ResetInput();
+    }
+
+    private bool CheckIsGround()
+    {
+        return (Physics.Raycast(feetPos.position, -Vector3.up, 0.1f));
     }
 
     private void ResetInput()
