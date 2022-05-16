@@ -213,4 +213,9 @@ public class Player : MonoBehaviour
         Debug.Log("Player Died");
     }
 
+
+    public void GetRemainingSlimes(int n)
+    {
+        remainingSlimesDisplay.UpdateSlimesDisplay(n);
+    }
 }

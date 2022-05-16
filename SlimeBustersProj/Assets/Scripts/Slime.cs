@@ -12,7 +12,7 @@ public class Slime : MonoBehaviour, IVacuumable
     [SerializeField]
     protected float vacuumRate = 5;
     [SerializeField]
-    protected int regenRate = 1; //rate por segundo a que o slime regenera vida
+    protected int regenRate = 1; //rate per second that the slime regenerates life;
     [SerializeField]
     protected float basicSpeed = 10;
     [SerializeField]
@@ -21,18 +21,24 @@ public class Slime : MonoBehaviour, IVacuumable
     [SerializeField]
     protected int damage = 1;
 
+    public SlimeManager Manager;
 
+    public bool PrePlaced = true; //whether the slime was pre placed in the level(true) or spawned by a spawner(false)
 
+    
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-       
+        if (PrePlaced)
+        {
+            Manager.AddSlime(this, PrePlaced);
+        }
 
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }
@@ -49,11 +55,14 @@ public class Slime : MonoBehaviour, IVacuumable
 
     protected virtual void Die()
     {
-        Destroy(gameObject);
+        transform.position = new Vector3(999, 999, 999);
+        Manager.RemoveSlime(this);
+        StartCoroutine(BeDestroyed());
+        
     }
 
 
-    protected void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player")) {
 
@@ -61,5 +70,13 @@ public class Slime : MonoBehaviour, IVacuumable
 
         }
     }
+
+    protected virtual IEnumerator BeDestroyed()
+    {
+        yield return new WaitForSeconds(0.1f);
+
+        Destroy(gameObject);
+    }
+
 
 }

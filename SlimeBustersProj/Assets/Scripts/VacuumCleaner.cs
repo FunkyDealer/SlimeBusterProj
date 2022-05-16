@@ -48,7 +48,7 @@ public class VacuumCleaner : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Vacuumable")) {
+        if (other.CompareTag("Slime")) {
 
             if (Active) other.gameObject.GetComponent<IVacuumable>().GetVacuumed();
 
