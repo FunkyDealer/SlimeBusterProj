@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4411056012622764604}
   - component: {fileID: 4411056012622764607}
   - component: {fileID: 4411056012622764592}
+  - component: {fileID: 7701852217967197142}
+  - component: {fileID: 1118919800}
   m_Layer: 0
   m_Name: Blue Slime
   m_TagString: Slime
@@ -29,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4411056012622764606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.77, y: 1.7, z: 0.37}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -136,3 +138,39 @@ MonoBehaviour:
   damage: 1
   Manager: {fileID: 0}
   PrePlaced: 1
+  speed: 0
+--- !u!114 &7701852217967197142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411056012622764606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc91e7ec49773148b3ae92f52e38dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivationDistance: 4
+--- !u!195 &1118919800
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411056012622764606}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
