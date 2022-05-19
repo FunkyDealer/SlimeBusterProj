@@ -5,26 +5,22 @@ using UnityEngine.AI;
 
 public class AIRunBehaviour : MonoBehaviour
 {
-    private GameObject target;
-    private NavMeshAgent _agent;
-
-    [SerializeField]
-    private float ActivationDistance = 4.0f; //distance to target to activate behaviour
+    private NavMeshAgent meshAgent;
 
     private void Awake()
     {
-        
+        meshAgent = this.GetComponent<NavMeshAgent>();
     }
 
     public void Initiate(Player player)
     {
-        target = player.gameObject;
+
     }
 
     // Use this for initialization
     void Start()
     {
-        _agent = this.GetComponent<NavMeshAgent>();
+       
 
 
     }
@@ -40,16 +36,21 @@ public class AIRunBehaviour : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float distance = Vector3.Distance(transform.position, target.transform.position);
-
-        if (distance < ActivationDistance)
-        {
-            Vector3 dirToPlayer = transform.position - target.transform.position;
-            Vector3 newPos = transform.position + dirToPlayer;
-
-            _agent.SetDestination(newPos);
-        }
+  
     }
 
+    public bool Run(GameObject target, bool inTargetRange)
+    {
+
+            Vector3 dirToTarget = transform.position - target.transform.position;
+            Vector3 newPos = transform.position + dirToTarget;
+
+            meshAgent.SetDestination(newPos);
+
+
+        if (!inTargetRange) return true; //sucessefully escaped
+        else return false; //didn't escape yet
+
+    }
     
 }

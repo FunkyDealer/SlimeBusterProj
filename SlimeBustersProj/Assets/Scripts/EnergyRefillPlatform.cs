@@ -7,6 +7,8 @@ public class EnergyRefillPlatform : MonoBehaviour
     [SerializeField]
     float refillRate = 5.0f;
 
+    Player player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +25,13 @@ public class EnergyRefillPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Player>().Cleaner.StartRefill(refillRate);
+            player = other.gameObject.GetComponent<Player>();
+            player.Cleaner.StartRefill(refillRate);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        other.gameObject.GetComponent<Player>().Cleaner.StopRefill();
+        player.Cleaner.StopRefill();
     }
 }

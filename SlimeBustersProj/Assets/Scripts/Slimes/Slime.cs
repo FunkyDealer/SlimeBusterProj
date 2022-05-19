@@ -5,6 +5,9 @@ using UnityEngine;
 public class Slime : MonoBehaviour, IVacuumable
 {
     [SerializeField]
+    protected float AITickTime = 1;
+
+    [SerializeField]
     protected float activationTime = 1f;
 
     [SerializeField]
@@ -25,6 +28,8 @@ public class Slime : MonoBehaviour, IVacuumable
 
     public bool PrePlaced = true; //whether the slime was pre placed in the level(true) or spawned by a spawner(false)
 
+    protected bool playerInRange;
+
     protected virtual void Awake()
     {
 
@@ -44,6 +49,11 @@ public class Slime : MonoBehaviour, IVacuumable
     protected virtual void Update()
     {
         
+    }
+
+    protected virtual void FixedUpdate()
+    {
+
     }
 
     public virtual void GetVacuumed()
@@ -81,5 +91,19 @@ public class Slime : MonoBehaviour, IVacuumable
         Destroy(gameObject);
     }
 
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        
+    }
 
+    protected virtual void OnTriggerExit(Collider other)
+    {
+
+    }
+
+
+    public virtual void GetPlayerInfo(bool playerInRange)
+    {
+        this.playerInRange = playerInRange;
+    }
 }

@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class BlueSlime : Slime, IVacuumable
 {
-    enum S_State
+    enum S_State //blue slime State machine
     {
-        Idle,
-        Wandering,
-        Moving
+        Idle, //slime is doing nothing
+        Wandering, //slime is wandering the surroundings
+        Running, //slime is running away from something
+        Moving //slime is moving to a target location
     }
-    private S_State currentAIState = S_State.Idle;
+    private S_State currentAIState = S_State.Idle; //default state is Idle
+    
 
-    private Vector3 InitialPos;
-    private Vector3 targetPos;
-    private int randomPos;
-    private bool canWalk = false;
-    [SerializeField]
-    private float speed;
-    private float step;
-
+    AIRunBehaviour runBehaviour; //AI run behaviour
 
     protected override void Awake()
     {
@@ -34,14 +29,12 @@ public class BlueSlime : Slime, IVacuumable
     protected override void Start()
     {
         base.Start();
-        StartCoroutine(Activate());
 
-        AIRunBehaviour behaviour = GetComponent<AIRunBehaviour>();
-        behaviour.Initiate(Manager.Player);
+        runBehaviour = GetComponent<AIRunBehaviour>();
+        runBehaviour.Initiate(Manager.Player);
 
-        randomPos = 0;
-        InitialPos = transform.position;
-        targetPos = InitialPos;
+        StartCoroutine(Activate()); //Slimes activate after x seconds
+
 
 
     }
@@ -51,8 +44,15 @@ public class BlueSlime : Slime, IVacuumable
     {
         base.Update();
 
-        step = speed * Time.deltaTime;
-        randomPos = Random.Range(2, 100);
+
+    }
+
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        
+
+       
     }
 
     IEnumerator Activate()
@@ -60,12 +60,56 @@ public class BlueSlime : Slime, IVacuumable
         yield return new WaitForSeconds(activationTime);
 
         currentAIState = S_State.Wandering;
+
+        StartCoroutine(RunAI());
     }
 
     public override void GetVacuumed()
     {
         base.GetVacuumed();
 
+
+    }
+
+    public override void GetPlayerInfo(bool playerInRange)
+    {
+        base.GetPlayerInfo(playerInRange);
+
+        if (playerInRange && currentAIState != S_State.Running) InitiateRunningAway();
+
+    }
+
+    private void InitiateRunningAway()
+    {
+        currentAIState = S_State.Running;
+    }
+
+
+    private IEnumerator RunAI()
+    {       
+        switch (currentAIState)
+        {
+            case S_State.Idle:
+
+                break;
+            case S_State.Wandering:
+
+                break;
+            case S_State.Running:
+
+                if (runBehaviour.Run(Manager.Player.gameObject, playerInRange)) currentAIState = S_State.Idle; //if the run behaviour return true then slimes escaped from target
+
+                break;
+            case S_State.Moving:
+
+                break;
+            default:
+                break;
+        }
+
+        yield return new WaitForSeconds(AITickTime); //the AI only run at every x seconds (default 1) //navmesh still works in real time
+
+        StartCoroutine(RunAI());
 
     }
 }

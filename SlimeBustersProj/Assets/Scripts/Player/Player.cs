@@ -58,6 +58,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private HUD_RemainingSlimesDisplay remainingSlimesDisplay;
 
+    [SerializeField]
+    private LayerMask mousePointLayerMask;
 
     private void Awake()
     {
@@ -137,7 +139,7 @@ public class Player : MonoBehaviour
             //make player look at point where mouse is clicking
             Vector3 lookDir = Vector3.zero;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit raycastHit))
+            if (Physics.Raycast(ray, out RaycastHit raycastHit, 500, mousePointLayerMask, QueryTriggerInteraction.Ignore))
             {
                 lookDir = raycastHit.point - transform.position;
             }
