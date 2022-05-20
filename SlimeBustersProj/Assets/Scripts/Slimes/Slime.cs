@@ -30,6 +30,9 @@ public class Slime : MonoBehaviour, IVacuumable
 
     protected bool playerInRange;
 
+    [SerializeField]
+    protected GameObject healthFragPrefab;
+
     protected virtual void Awake()
     {
 
@@ -70,6 +73,9 @@ public class Slime : MonoBehaviour, IVacuumable
     {
         transform.position = new Vector3(999, 999, 999);
         Manager.RemoveSlime(this);
+
+        spawnHealthFrag();
+
         StartCoroutine(BeDestroyed());
         
     }
@@ -105,5 +111,14 @@ public class Slime : MonoBehaviour, IVacuumable
     public virtual void GetPlayerInfo(bool playerInRange)
     {
         this.playerInRange = playerInRange;
+    }
+
+    protected void spawnHealthFrag()
+    {
+        if (Random.value < 0.2)
+        {
+            GameObject o = Instantiate(healthFragPrefab, transform.position, Quaternion.identity);
+
+        }
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class HUD_HealthDisplay : MonoBehaviour
+public class HUD_VacuumEnergyDisplay : MonoBehaviour
 {
+
     [SerializeField]
-    private TMP_Text HealthDisplayText;
+    private TMP_Text EnergyDisplayText;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +21,8 @@ public class HUD_HealthDisplay : MonoBehaviour
         
     }
 
-    public void UpdateHealthDisplay(int currentHealth)
+    public void UpdateEnergyDisplay(int currentEnergy)
     {
-        HealthDisplayText.text = $"Health: {currentHealth}";
+        EnergyDisplayText.text = $"Energy: {currentEnergy}";
     }
-
 }

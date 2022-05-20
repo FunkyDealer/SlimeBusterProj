@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edb3ac703f45d994aadbff30bcd793a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AITickTime: 1
   activationTime: 1
   health: 20
   vacuumRate: 15
@@ -139,6 +140,8 @@ MonoBehaviour:
   damage: 1
   Manager: {fileID: 0}
   PrePlaced: 1
+  healthFragPrefab: {fileID: 5346739927442539182, guid: ffa1262f3ebe2d1439c79b3461ca6ed2,
+    type: 3}
 --- !u!114 &7701852217967197142
 MonoBehaviour:
   m_ObjectHideFlags: 0

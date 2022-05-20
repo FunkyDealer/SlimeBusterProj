@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class HUD_HealthDisplay : MonoBehaviour
+public class HUD_FragmentDisplay : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text HealthDisplayText;
+    private TMP_Text FragmentDisplayText;
 
     // Start is called before the first frame update
     void Start()
@@ -20,9 +20,8 @@ public class HUD_HealthDisplay : MonoBehaviour
         
     }
 
-    public void UpdateHealthDisplay(int currentHealth)
+    public void UpdateFragDisplay(int currentFrag)
     {
-        HealthDisplayText.text = $"Health: {currentHealth}";
+        FragmentDisplayText.text = $"Frags: {currentFrag}";
     }
-
 }

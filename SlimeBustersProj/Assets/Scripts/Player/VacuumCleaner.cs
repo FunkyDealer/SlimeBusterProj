@@ -22,6 +22,10 @@ public class VacuumCleaner : MonoBehaviour
     bool beingRefilled = false;
     float refillRate = 0;
 
+    [Header("Hud Connections")]
+    [SerializeField]
+    private HUD_VacuumEnergyDisplay vacuumEnergyDisplay;
+
     private void Awake()
     {
         currentEnergy = maxEnergy;
@@ -31,14 +35,24 @@ public class VacuumCleaner : MonoBehaviour
     void Start()
     {
         ParticleSystem.Stop();
+
+        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Active && currentEnergy > 0) currentEnergy -= energyUseRate * Time.deltaTime;
+        if (Active && currentEnergy > 0)
+        {
+            currentEnergy -= energyUseRate * Time.deltaTime;
+            vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
+        }
 
-        if (beingRefilled && currentEnergy < 100) currentEnergy += refillRate * Time.deltaTime;
+        if (beingRefilled && currentEnergy < 100)
+        {
+            currentEnergy += refillRate * Time.deltaTime;
+            vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
+        }
     }
 
     private void FixedUpdate()
@@ -82,11 +96,13 @@ public class VacuumCleaner : MonoBehaviour
     {
         currentEnergy += ammount;
         if (currentEnergy > maxEnergy) currentEnergy = maxEnergy;
+        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
     }
 
     public void RefillEnergy()
     {
         currentEnergy = maxEnergy;
+        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
     }
 
     public void StartRefill(float rate)

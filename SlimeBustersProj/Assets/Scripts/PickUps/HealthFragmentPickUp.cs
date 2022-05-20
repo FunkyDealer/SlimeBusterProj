@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnergyRefillPlatform : MonoBehaviour
+public class HealthFragmentPickUp : MonoBehaviour
 {
-    [SerializeField]
-    float refillRate = 5.0f;
-
-    Player player;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,13 +20,8 @@ public class EnergyRefillPlatform : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            player = other.gameObject.GetComponent<Player>();
-            player.Cleaner.StartRefill(refillRate);
+            other.gameObject.GetComponent<Player>().AddHealthFragment(1);
+            Destroy(this.gameObject);
         }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        player.Cleaner.StopRefill();
     }
 }

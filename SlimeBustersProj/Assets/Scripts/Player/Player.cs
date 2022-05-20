@@ -32,18 +32,21 @@ public class Player : MonoBehaviour
     private bool interact;
     private bool attack;
 
+    [SerializeField]
+    private LayerMask mousePointLayerMask;
+
     [Header("Player Stuff")]
-
-    private bool PlayerID;
-
     //Player stuff
     private bool isAlive = true;
     //health
     private int currenthealth = 3;
     public int CurrentHealth => currenthealth;
     [SerializeField]
-    private int maxHealth = 3;
-    public int MaxHealth => maxHealth;
+    private int defaultHealth = 3;
+
+    private int currentHealthFragments = 0;
+    [SerializeField]
+    private int neededHealthFragments = 4;
 
     bool canBeDamaged = true;
     float InvincibleTime = 3;
@@ -57,13 +60,15 @@ public class Player : MonoBehaviour
     private HUD_HealthDisplay healthDisplay;
     [SerializeField]
     private HUD_RemainingSlimesDisplay remainingSlimesDisplay;
-
     [SerializeField]
-    private LayerMask mousePointLayerMask;
+    private HUD_FragmentDisplay fragmentDisplay;
+
+
+
 
     private void Awake()
     {
-        currenthealth = maxHealth;
+        currenthealth = defaultHealth;
         canBeDamaged = true;
     }
 
@@ -74,8 +79,9 @@ public class Player : MonoBehaviour
 
         
 
-        healthDisplay.UpdateHealthDisplay(currenthealth, maxHealth);
-        remainingSlimesDisplay.UpdateSlimesDisplay(99);
+        healthDisplay.UpdateHealthDisplay(currenthealth);
+        remainingSlimesDisplay.UpdateSlimesDisplay(0);
+        fragmentDisplay.UpdateFragDisplay(currentHealthFragments);
 
     }
 
@@ -192,7 +198,7 @@ public class Player : MonoBehaviour
         {
             canBeDamaged = false;
             currenthealth -= damage;
-            healthDisplay.UpdateHealthDisplay(currenthealth, maxHealth);
+            healthDisplay.UpdateHealthDisplay(currenthealth);
 
             if (currenthealth > 0)
             {
@@ -231,9 +237,27 @@ public class Player : MonoBehaviour
         Debug.Log("Player Died");
     }
 
-
     public void GetRemainingSlimes(int n)
     {
         remainingSlimesDisplay.UpdateSlimesDisplay(n);
+    }
+
+    public void AddHealth(int ammount)
+    {
+        currenthealth += ammount;
+        healthDisplay.UpdateHealthDisplay(currenthealth);
+    }
+
+    public void AddHealthFragment(int ammount)
+    {
+        currentHealthFragments += ammount;
+
+        if (currentHealthFragments >= neededHealthFragments)
+        {
+            currentHealthFragments -= neededHealthFragments;
+            AddHealth(1);
+        }
+
+        fragmentDisplay.UpdateFragDisplay(currentHealthFragments);
     }
 }

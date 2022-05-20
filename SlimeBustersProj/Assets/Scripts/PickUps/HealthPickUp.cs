@@ -1,13 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class HUD_HealthDisplay : MonoBehaviour
+public class HealthPickUp : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text HealthDisplayText;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +16,13 @@ public class HUD_HealthDisplay : MonoBehaviour
         
     }
 
-    public void UpdateHealthDisplay(int currentHealth)
-    {
-        HealthDisplayText.text = $"Health: {currentHealth}";
-    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<Player>().AddHealth(1);
+            Destroy(this.gameObject);
+        }
+    }
 }
