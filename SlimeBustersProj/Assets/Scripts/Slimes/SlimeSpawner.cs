@@ -5,12 +5,6 @@ using UnityEngine;
 public class SlimeSpawner : MonoBehaviour
 {
     [SerializeField]
-    GameObject SlimePrefab;
-
-    [SerializeField]
-    SlimeManager slimeManager;
-
-    [SerializeField]
     float spawnCheckInterval = 5;
     [SerializeField]
     float delayChange = 2;
@@ -21,12 +15,13 @@ public class SlimeSpawner : MonoBehaviour
 
     private void Awake()
     {
-        slimeManager.AddSlimeManager(this);
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        SlimeManager.inst.AddSlimeManager(this);
         StartCoroutine(CheckForSpawn());
     }
 
@@ -38,14 +33,16 @@ public class SlimeSpawner : MonoBehaviour
 
     public void ForceSpawnSlime()
     {
-        if (slimeManager.RemainingSlimesToSpawn <= 0) return;
+        if (SlimeManager.inst.RemainingSlimesToSpawn <= 0) return;
 
-        GameObject o = Instantiate(SlimePrefab, transform.position, Quaternion.identity);
+        GameObject prefab = SlimeManager.inst.getNextSlime();
+
+        GameObject o = Instantiate(prefab, transform.position, Quaternion.identity);
         Slime s = o.GetComponent<Slime>();
 
         s.PrePlaced = false;
-        
-        slimeManager.AddSlime(s, s.PrePlaced);
+
+        SlimeManager.inst.AddSlime(s, s.PrePlaced);
 
 
     }

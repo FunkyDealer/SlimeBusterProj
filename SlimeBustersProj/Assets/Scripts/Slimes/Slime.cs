@@ -24,11 +24,10 @@ public class Slime : MonoBehaviour, IVacuumable
     [SerializeField]
     protected int damage = 1;
 
-    public SlimeManager Manager;
 
     public bool PrePlaced = true; //whether the slime was pre placed in the level(true) or spawned by a spawner(false)
 
-    protected bool playerInRange;
+    protected bool playerInRange; //is the player in range of the slime's radar?
 
     [SerializeField]
     protected GameObject healthFragPrefab;
@@ -43,7 +42,7 @@ public class Slime : MonoBehaviour, IVacuumable
     {
         if (PrePlaced)
         {
-            Manager.AddSlime(this, PrePlaced);
+            SlimeManager.inst.AddSlime(this, PrePlaced);
         }
 
     }
@@ -72,7 +71,7 @@ public class Slime : MonoBehaviour, IVacuumable
     protected virtual void Die()
     {
         transform.position = new Vector3(999, 999, 999);
-        Manager.RemoveSlime(this);
+        SlimeManager.inst.RemoveSlime(this);
 
         spawnHealthFrag();
 

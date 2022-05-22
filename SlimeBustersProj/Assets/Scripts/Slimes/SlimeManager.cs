@@ -5,27 +5,45 @@ using UnityEngine;
 public class SlimeManager : MonoBehaviour
 {
     [SerializeField]
-    private List<SlimeSpawner> spawners = new List<SlimeSpawner>();
+    private List<SlimeSpawner> spawners = new List<SlimeSpawner>(); //list of slime spawners the scene
 
     [SerializeField]
-    private List<Slime> slimeList = new List<Slime>();
+    private List<Slime> aliveSlimeList = new List<Slime>(); //list of currently existing slimes in the scene
 
     [SerializeField]
-    public int RemainingSlimesToSpawn { private set; get; } = 10;
+    public int RemainingSlimesToSpawn { private set; get; } //ammount of slimes left for the spawners to spawn
 
-    private int remainingSlimesToCapture;
+    private int remainingSlimesToCapture; //current number of slimes left for player to capture (includes unspawned ones)
 
     [SerializeField]
-    int firstWave = 4;
+    int firstWave = 4; //The first wave of slimes that will spawn on the spawners when the game beggins
 
     [SerializeField]
     private Player player;
     public Player Player => player;
 
+    [SerializeField]
+    List<GameObject> prefabSlimeList; //list of slimes in order to spawn
+    private int currentSlime = 0; //current slime in the slime list to spawn;
+
+    private static SlimeManager _instance;
+    public static SlimeManager inst { get { return _instance; } }
+
 
     private void Awake()
     {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+
+        RemainingSlimesToSpawn = prefabSlimeList.Count; //remaining slimes to spawn is the ammount put in the list, the preplaced slimes are also added by themselfs
         remainingSlimesToCapture = RemainingSlimesToSpawn;
+
     }
 
     // Start is called before the first frame update
@@ -62,7 +80,7 @@ public class SlimeManager : MonoBehaviour
         spawners.Add(s);
     }
 
-    public void AddSlime(Slime s, bool preplaced)
+    public void AddSlime(Slime s, bool preplaced)  //add slime to list
     {
         if (preplaced)
         {
@@ -74,15 +92,24 @@ public class SlimeManager : MonoBehaviour
             RemainingSlimesToSpawn--;
         }
         
-        slimeList.Add(s);
-        s.Manager = this;
+        aliveSlimeList.Add(s);
     }
 
     public void RemoveSlime(Slime s)
     {
-        slimeList.Remove(s);
+        aliveSlimeList.Remove(s);
         remainingSlimesToCapture--;
         player.GetRemainingSlimes(remainingSlimesToCapture);
+
+    }
+
+    public GameObject getNextSlime() //get next slime to spawn in the prefab slime list
+    {
+        GameObject slime = prefabSlimeList[currentSlime];
+
+        currentSlime++;
+        return slime;
+
 
     }
 }

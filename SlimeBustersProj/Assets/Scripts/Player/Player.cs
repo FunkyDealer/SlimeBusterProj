@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private GameObject camera;
+    private GameObject myCamera;
 
     [Header("Movement")]
     [SerializeField]
@@ -115,7 +115,7 @@ public class Player : MonoBehaviour
         { 
         movementInput = Vector2.ClampMagnitude(movementInput, 1);
         float dirY = myRigidbody.velocity.y;
-        direction = camera.transform.right * movementInput.x + camera.transform.forward * movementInput.y;
+        direction = myCamera.transform.right * movementInput.x + myCamera.transform.forward * movementInput.y;
         direction *= currentMovementSpeed;
         direction.y = dirY;
 
@@ -157,7 +157,7 @@ public class Player : MonoBehaviour
             if (lookInput.magnitude > 0) //Controller
                 {                    
                     lookInput = Vector2.ClampMagnitude(lookInput, 1);
-                    Vector3 lookDirection = camera.transform.right * lookInput.x + camera.transform.forward * lookInput.y;
+                    Vector3 lookDirection = myCamera.transform.right * lookInput.x + myCamera.transform.forward * lookInput.y;
 
                     lookDir = new Vector3(lookDirection.x, 0, lookDirection.z);
                     if (lookDir != Vector3.zero)

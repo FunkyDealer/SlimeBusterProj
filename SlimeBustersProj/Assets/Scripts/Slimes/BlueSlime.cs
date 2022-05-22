@@ -31,7 +31,7 @@ public class BlueSlime : Slime, IVacuumable
         base.Start();
 
         runBehaviour = GetComponent<AIRunBehaviour>();
-        runBehaviour.Initiate(Manager.Player);
+        runBehaviour.Initiate(SlimeManager.inst.Player);
 
         StartCoroutine(Activate()); //Slimes activate after x seconds
 
@@ -97,7 +97,7 @@ public class BlueSlime : Slime, IVacuumable
                 break;
             case S_State.Running:
 
-                if (runBehaviour.Run(Manager.Player.gameObject, playerInRange)) currentAIState = S_State.Idle; //if the run behaviour return true then slimes escaped from target
+                if (runBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInRange)) currentAIState = S_State.Idle; //if the run behaviour return true then slimes escaped from target
 
                 break;
             case S_State.Moving:

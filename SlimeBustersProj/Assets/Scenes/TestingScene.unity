@@ -1367,7 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a8a6f94570b0634c82932d0089f09ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 330585543}
+  myCamera: {fileID: 330585543}
   maxMovementSpeed: 5
   movSmoothLerp: 0.03
   jumpForce: 7
@@ -8201,9 +8201,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawners: []
-  slimeList: []
+  aliveSlimeList: []
   firstWave: 4
   player: {fileID: 550742132}
+  prefabSlimeList:
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
+  - {fileID: 4411056012622764606, guid: 354e11edaab2eb240956587641795c89, type: 3}
 --- !u!4 &1976590799
 Transform:
   m_ObjectHideFlags: 0
