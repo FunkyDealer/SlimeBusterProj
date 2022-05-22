@@ -14,6 +14,10 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        transform.position = target.position + new Vector3(8, 10, -7);
+        transform.rotation = Quaternion.identity;
+        transform.rotation = Quaternion.Euler(45, -45, 0);
+
         offset = transform.position - target.position;
     }
 

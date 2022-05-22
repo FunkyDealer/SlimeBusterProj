@@ -80,7 +80,6 @@ public class Player : MonoBehaviour
         
 
         healthDisplay.UpdateHealthDisplay(currenthealth);
-        remainingSlimesDisplay.UpdateSlimesDisplay(0);
         fragmentDisplay.UpdateFragDisplay(currentHealthFragments);
 
     }

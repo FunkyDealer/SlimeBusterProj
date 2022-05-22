@@ -60,7 +60,6 @@ public class Slime : MonoBehaviour, IVacuumable
 
     public virtual void GetVacuumed()
     {
-        Debug.Log(health);
 
         if (health > 0) health = health - vacuumRate * Time.deltaTime;
 

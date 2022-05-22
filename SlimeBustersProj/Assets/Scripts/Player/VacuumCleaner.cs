@@ -7,7 +7,6 @@ public class VacuumCleaner : MonoBehaviour
     [SerializeField]
     private Player player;
 
-
     public bool Active { get; private set; } = false;
 
     [SerializeField]

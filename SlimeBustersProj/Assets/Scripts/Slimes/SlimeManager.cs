@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class SlimeManager : MonoBehaviour
 {
-    [SerializeField]
     private List<SlimeSpawner> spawners = new List<SlimeSpawner>(); //list of slime spawners the scene
-
-    [SerializeField]
     private List<Slime> aliveSlimeList = new List<Slime>(); //list of currently existing slimes in the scene
 
     [SerializeField]
@@ -65,6 +62,7 @@ public class SlimeManager : MonoBehaviour
             throw new System.Exception("No Spawners found when trying to spawn first Wave");
         }
 
+ 
         player.GetRemainingSlimes(remainingSlimesToCapture);
     }
 
