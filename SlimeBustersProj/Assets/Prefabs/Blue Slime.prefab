@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4411056012622764607}
   - component: {fileID: 4411056012622764592}
   - component: {fileID: 7701852217967197142}
+  - component: {fileID: 6791695101536726530}
   - component: {fileID: 1118919800}
   m_Layer: 0
   m_Name: Blue Slime
@@ -138,7 +139,6 @@ MonoBehaviour:
   basicSpeed: 10
   runSpeed: 15
   damage: 1
-  Manager: {fileID: 0}
   PrePlaced: 1
   healthFragPrefab: {fileID: 5346739927442539182, guid: ffa1262f3ebe2d1439c79b3461ca6ed2,
     type: 3}
@@ -154,6 +154,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc91e7ec49773148b3ae92f52e38dfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6791695101536726530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411056012622764606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f59f58aefd5f714d9f76a3abf60357f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WanderMaxDistance: 10
 --- !u!195 &1118919800
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -174,7 +187,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 1
   m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!1 &6498395382540101063
 GameObject:

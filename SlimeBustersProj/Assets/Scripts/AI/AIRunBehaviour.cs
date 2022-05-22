@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIRunBehaviour : MonoBehaviour
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Rigidbody))]
+public class AIRunBehaviour : AIBehaviour
 {
-    private NavMeshAgent meshAgent;
-
-    private void Awake()
+    protected override void Awake()
     {
-        meshAgent = this.GetComponent<NavMeshAgent>();
+        base.Awake();
+        
     }
 
-    public void Initiate(Player player)
+    public override void Initiate()
     {
-
+        base.Initiate();
     }
 
     // Use this for initialization
@@ -39,13 +40,13 @@ public class AIRunBehaviour : MonoBehaviour
   
     }
 
-    public bool Run(GameObject target, bool inTargetRange)
+    public bool Run(GameObject target, bool inTargetRange, NavMeshAgent agent)
     {
 
             Vector3 dirToTarget = transform.position - target.transform.position;
             Vector3 newPos = transform.position + dirToTarget;
 
-            meshAgent.SetDestination(newPos);
+            agent.SetDestination(newPos);
 
 
         if (!inTargetRange) return true; //sucessefully escaped

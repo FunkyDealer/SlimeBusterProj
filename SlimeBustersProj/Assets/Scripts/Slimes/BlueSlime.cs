@@ -15,6 +15,7 @@ public class BlueSlime : Slime, IVacuumable
     
 
     AIRunBehaviour runBehaviour; //AI run behaviour
+    AIWanderBehaviour wanderBehaviour; //AI wander behaviour
 
     protected override void Awake()
     {
@@ -31,7 +32,10 @@ public class BlueSlime : Slime, IVacuumable
         base.Start();
 
         runBehaviour = GetComponent<AIRunBehaviour>();
-        runBehaviour.Initiate(SlimeManager.inst.Player);
+        runBehaviour.Initiate();
+
+        wanderBehaviour = GetComponent<AIWanderBehaviour>();
+        wanderBehaviour.Initiate();
 
         StartCoroutine(Activate()); //Slimes activate after x seconds
 
@@ -50,8 +54,8 @@ public class BlueSlime : Slime, IVacuumable
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        
 
+        DebugShowDestination();
        
     }
 
@@ -90,14 +94,18 @@ public class BlueSlime : Slime, IVacuumable
         switch (currentAIState)
         {
             case S_State.Idle:
+                if (!playerInRange) currentAIState = S_State.Wandering;
+                else currentAIState = S_State.Running;
 
                 break;
             case S_State.Wandering:
 
+                if (wanderBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInRange, meshAgent)) currentAIState = S_State.Running;
+
                 break;
             case S_State.Running:
 
-                if (runBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInRange)) currentAIState = S_State.Idle; //if the run behaviour return true then slimes escaped from target
+                if (runBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInRange, meshAgent)) currentAIState = S_State.Idle; //if the run behaviour return true then slimes escaped from target
 
                 break;
             case S_State.Moving:
@@ -112,4 +120,10 @@ public class BlueSlime : Slime, IVacuumable
         StartCoroutine(RunAI());
 
     }
+
+    private void DebugShowDestination()
+    {
+        Debug.DrawLine(transform.position, meshAgent.destination, Color.red);
+    }
+
 }

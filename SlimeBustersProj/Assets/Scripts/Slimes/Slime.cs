@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Slime : MonoBehaviour, IVacuumable
 {
@@ -32,9 +33,11 @@ public class Slime : MonoBehaviour, IVacuumable
     [SerializeField]
     protected GameObject healthFragPrefab;
 
+    protected NavMeshAgent meshAgent;
+
     protected virtual void Awake()
     {
-
+        meshAgent = GetComponent<NavMeshAgent>();
     }
 
     // Start is called before the first frame update
