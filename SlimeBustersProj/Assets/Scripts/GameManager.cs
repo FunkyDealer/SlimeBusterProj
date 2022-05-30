@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class GameManager : MonoBehaviour
 
     private static GameManager _instance;
     public static GameManager inst { get { return _instance; } }
+
+    [SerializeField]
+    private string nextScene = "Main Menu";
+    [SerializeField]
+    private float changeLevelTime = 3;
 
     private void Awake()
     {
@@ -35,5 +41,18 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void endLevel()
+    {
+
+        StartCoroutine(NextLevel());
+    }
+
+    private IEnumerator NextLevel()
+    {
+        yield return new WaitForSeconds(changeLevelTime);
+
+        SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 }

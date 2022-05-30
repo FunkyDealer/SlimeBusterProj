@@ -99,6 +99,7 @@ public class SlimeManager : MonoBehaviour
         remainingSlimesToCapture--;
         player.GetRemainingSlimes(remainingSlimesToCapture);
 
+        if (remainingSlimesToCapture <= 0) GameManager.inst.endLevel();
     }
 
     public GameObject getNextSlime() //get next slime to spawn in the prefab slime list

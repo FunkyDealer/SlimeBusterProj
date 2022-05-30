@@ -18,9 +18,11 @@ public class Slime : MonoBehaviour, IVacuumable
     [SerializeField]
     protected int regenRate = 1; //rate per second that the slime regenerates life;
     [SerializeField]
-    protected float basicSpeed = 10;
+    protected float basicSpeed = 3.5f;
     [SerializeField]
-    protected float runSpeed = 15;
+    protected float runSpeed = 5f;
+    [SerializeField]
+    protected float TurnSpeed = 120;
 
     [SerializeField]
     protected int damage = 1;
@@ -48,6 +50,8 @@ public class Slime : MonoBehaviour, IVacuumable
             SlimeManager.inst.AddSlime(this, PrePlaced);
         }
 
+        meshAgent.speed = basicSpeed;
+        meshAgent.angularSpeed = TurnSpeed;
     }
 
     // Update is called once per frame

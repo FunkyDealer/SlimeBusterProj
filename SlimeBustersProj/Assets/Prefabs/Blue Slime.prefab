@@ -136,8 +136,9 @@ MonoBehaviour:
   health: 20
   vacuumRate: 15
   regenRate: 1
-  basicSpeed: 10
-  runSpeed: 15
+  basicSpeed: 3.5
+  runSpeed: 8
+  TurnSpeed: 120
   damage: 1
   PrePlaced: 1
   healthFragPrefab: {fileID: 5346739927442539182, guid: ffa1262f3ebe2d1439c79b3461ca6ed2,
@@ -233,7 +234,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 12
+  m_Radius: 20
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5636364579008278743
 MonoBehaviour:
