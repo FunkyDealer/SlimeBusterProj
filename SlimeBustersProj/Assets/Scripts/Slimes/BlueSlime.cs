@@ -70,7 +70,6 @@ public class BlueSlime : Slime, IVacuumable
 
         StartCoroutine(RunAI());
     }
-
     public override void GetVacuumed()
     {
         base.GetVacuumed();

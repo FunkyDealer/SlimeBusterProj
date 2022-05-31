@@ -6,6 +6,7 @@ public class SlimeManager : MonoBehaviour
 {
     private List<SlimeSpawner> spawners = new List<SlimeSpawner>(); //list of slime spawners the scene
     private List<Slime> aliveSlimeList = new List<Slime>(); //list of currently existing slimes in the scene
+    public List<Slime> SlimeList => aliveSlimeList;
 
     [SerializeField]
     public int RemainingSlimesToSpawn { private set; get; } //ammount of slimes left for the spawners to spawn
