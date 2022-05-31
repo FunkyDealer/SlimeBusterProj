@@ -27,6 +27,9 @@ public class SlimeManager : MonoBehaviour
     public static SlimeManager inst { get { return _instance; } }
 
 
+    [SerializeField]
+    private List<AI_WayPoint> wayPoints = new List<AI_WayPoint>();
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -109,6 +112,23 @@ public class SlimeManager : MonoBehaviour
         currentSlime++;
         return slime;
 
+    }
 
+    public AI_WayPoint GetFurthestWayPoint(Vector3 position)
+    {
+        AI_WayPoint furthest = wayPoints[0];
+        float furthestDist = Vector3.Distance(position, furthest.transform.position);
+
+        foreach (var w in wayPoints)
+        {
+            float distTemp = Vector3.Distance(w.transform.position, position);
+            if (distTemp > furthestDist)
+            {
+                furthest = w;
+                furthestDist = distTemp;
+            }
+        }
+
+        return furthest;
     }
 }

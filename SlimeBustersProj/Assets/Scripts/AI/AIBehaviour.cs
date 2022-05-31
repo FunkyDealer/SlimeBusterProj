@@ -7,12 +7,13 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Rigidbody))]
 public class AIBehaviour : MonoBehaviour
 {
-    
+    protected Slime owner;
+    public Slime Owner => owner;
 
 
     protected virtual void Awake()
     {
-        
+        owner = GetComponent<Slime>();
     }
 
     public virtual void Initiate()
@@ -35,6 +36,12 @@ public class AIBehaviour : MonoBehaviour
     public virtual bool Run(GameObject target, bool inTargetRange, NavMeshAgent agent)
     {
 
+
+        return true;
+    }
+
+    public virtual bool Run(Vector3 target, NavMeshAgent agent)
+    {
 
         return true;
     }

@@ -16,6 +16,7 @@ public class BlueSlime : Slime, IVacuumable
 
     AIRunBehaviour runBehaviour; //AI run behaviour
     AIWanderBehaviour wanderBehaviour; //AI wander behaviour
+    AIMoveBehaviour moveBehaviour;
 
     protected override void Awake()
     {
@@ -36,6 +37,8 @@ public class BlueSlime : Slime, IVacuumable
 
         wanderBehaviour = GetComponent<AIWanderBehaviour>();
         wanderBehaviour.Initiate();
+
+        moveBehaviour = GetComponent<AIMoveBehaviour>();
 
         StartCoroutine(Activate()); //Slimes activate after x seconds
 
@@ -63,7 +66,7 @@ public class BlueSlime : Slime, IVacuumable
     {
         yield return new WaitForSeconds(activationTime);
 
-        currentAIState = S_State.Wandering;
+        InitiateWandering();
 
         StartCoroutine(RunAI());
     }
@@ -75,17 +78,36 @@ public class BlueSlime : Slime, IVacuumable
 
     }
 
-    public override void GetPlayerInfo(bool playerInRange)
+    public override void GetPlayerCloseDistance(bool playerInCloseRange)
     {
-        base.GetPlayerInfo(playerInRange);
+        base.GetPlayerCloseDistance(playerInCloseRange);
 
-        if (playerInRange && currentAIState != S_State.Running) InitiateRunningAway();
+        if (playerInCloseRange && currentAIState != S_State.Running) InitiateRunningAway();
 
     }
 
     private void InitiateRunningAway()
     {
+        meshAgent.speed = runSpeed;
+        meshAgent.angularSpeed = TurnSpeed;
+
         currentAIState = S_State.Running;
+        moveBehaviour.Initiate();
+        currentWayPoint = SlimeManager.inst.GetFurthestWayPoint(transform.position);
+    }
+
+    private void InitiateWandering()
+    {
+        meshAgent.speed = basicSpeed;
+        meshAgent.angularSpeed = TurnSpeed;
+        currentAIState = S_State.Wandering;
+    }
+
+    private void InitiateIdle()
+    {
+        meshAgent.speed = basicSpeed;
+        meshAgent.angularSpeed = TurnSpeed;
+        currentAIState = S_State.Idle;
     }
 
 
@@ -94,33 +116,42 @@ public class BlueSlime : Slime, IVacuumable
         switch (currentAIState)
         {
             case S_State.Idle:
-                meshAgent.speed = basicSpeed;
-                meshAgent.angularSpeed = TurnSpeed;
 
-                if (!playerInRange) currentAIState = S_State.Wandering;
-                else currentAIState = S_State.Running;
+                if (!playerInCloseRange) InitiateWandering();
+                else InitiateRunningAway();
 
                 break;
             case S_State.Wandering:
 
-                meshAgent.speed = basicSpeed;
-                meshAgent.angularSpeed = TurnSpeed;
-                if (wanderBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInRange, meshAgent)) currentAIState = S_State.Running;
+                if (!wanderBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInCloseRange, meshAgent)) InitiateRunningAway();
 
                 break;
             case S_State.Running:
+                if (!playerInFarRange)
+                {
+                    moveBehaviour.ForceEnd();
+                    currentAIState = S_State.Idle;
+                    break;
+                }
 
-                meshAgent.speed = runSpeed;
-                meshAgent.angularSpeed = TurnSpeed;
-                if (runBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInRange, meshAgent)) currentAIState = S_State.Idle; //if the run behaviour return true then slimes escaped from target
+                if (moveBehaviour.Run(currentWayPoint.transform.position, meshAgent) && !playerInCloseRange) InitiateIdle();
+                else if (!moveBehaviour.Active && playerInCloseRange)
+                {
+                    InitiateRunningAway();
+                }
+
+                //if (runBehaviour.Run(SlimeManager.inst.Player.gameObject, playerInRange, meshAgent)) currentAIState = S_State.Idle; //if the run behaviour return true then slimes escaped from target
 
                 break;
             case S_State.Moving:
                 meshAgent.speed = basicSpeed;
                 meshAgent.angularSpeed = TurnSpeed;
+                //not being used right now
 
                 break;
             default:
+                //do nothing
+
                 break;
         }
 
@@ -134,5 +165,7 @@ public class BlueSlime : Slime, IVacuumable
     {
         Debug.DrawLine(transform.position, meshAgent.destination, Color.red);
     }
+
+    
 
 }

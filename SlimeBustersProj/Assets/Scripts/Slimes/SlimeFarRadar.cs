@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeRadar : MonoBehaviour
+public class SlimeFarRadar : MonoBehaviour
 {
     Slime slime;
-    bool playerInCloseRange = false;
+    bool playerInFarRange = false;
 
     private void Awake()
     {
@@ -15,29 +15,29 @@ public class SlimeRadar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            playerInCloseRange = true;
-            slime.GetPlayerCloseDistance(playerInCloseRange);
+            playerInFarRange = true;
+            slime.GetPlayerFarDistance(playerInFarRange);
         }
     }
-     private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            playerInCloseRange = false;
-            slime.GetPlayerCloseDistance(playerInCloseRange);
+            playerInFarRange = false;
+            slime.GetPlayerFarDistance(playerInFarRange);
         }
     }
 }

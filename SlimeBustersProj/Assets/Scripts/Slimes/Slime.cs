@@ -7,10 +7,8 @@ public class Slime : MonoBehaviour, IVacuumable
 {
     [SerializeField]
     protected float AITickTime = 1;
-
     [SerializeField]
     protected float activationTime = 1f;
-
     [SerializeField]
     protected float health = 20;
     [SerializeField]
@@ -23,19 +21,21 @@ public class Slime : MonoBehaviour, IVacuumable
     protected float runSpeed = 5f;
     [SerializeField]
     protected float TurnSpeed = 120;
-
     [SerializeField]
     protected int damage = 1;
 
 
     public bool PrePlaced = true; //whether the slime was pre placed in the level(true) or spawned by a spawner(false)
 
-    protected bool playerInRange; //is the player in range of the slime's radar?
+    protected bool playerInCloseRange; //is the player in close range of the slime's close radar?
+    protected bool playerInFarRange; //is the player in far range of the slime's far radar?
 
     [SerializeField]
     protected GameObject healthFragPrefab;
 
     protected NavMeshAgent meshAgent;
+    protected AI_WayPoint currentWayPoint = null;
+    public AI_WayPoint CurrentWayPoint => currentWayPoint;
 
     protected virtual void Awake()
     {
@@ -113,9 +113,14 @@ public class Slime : MonoBehaviour, IVacuumable
     }
 
 
-    public virtual void GetPlayerInfo(bool playerInRange)
+    public virtual void GetPlayerCloseDistance(bool playerInCloseRange)
     {
-        this.playerInRange = playerInRange;
+        this.playerInCloseRange = playerInCloseRange;
+    }
+
+    public virtual void GetPlayerFarDistance(bool playerInFarRange)
+    {
+        this.playerInFarRange = playerInFarRange;
     }
 
     protected void spawnHealthFrag()
@@ -125,5 +130,10 @@ public class Slime : MonoBehaviour, IVacuumable
             GameObject o = Instantiate(healthFragPrefab, transform.position, Quaternion.identity);
 
         }
+    }
+
+    public void CancelWayPoint()
+    {
+        currentWayPoint = null;
     }
 }
