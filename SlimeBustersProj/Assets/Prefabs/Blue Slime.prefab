@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6791695101536726530}
   - component: {fileID: 788699962648882474}
   - component: {fileID: 1118919800}
+  - component: {fileID: 2650988373144528156}
   m_Layer: 0
   m_Name: Blue Slime
   m_TagString: Slime
@@ -204,6 +205,52 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2650988373144528156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411056012622764606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3588d21a3b61de54a97f6508ae33f60c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Method: 2
+  m_Curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 4.478452
+      outSlope: 4.478452
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.034300793
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0.0035727024
+      outSlope: 0.0035727024
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -4.5662622
+      outSlope: -4.5662622
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.029023767
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5250812728863455132
 GameObject:
   m_ObjectHideFlags: 0
