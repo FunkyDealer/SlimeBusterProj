@@ -1,13 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class SlimeSpawner : MonoBehaviour
 {
-    [SerializeField]
-    float spawnCheckInterval = 5;
-    [SerializeField]
-    float delayChange = 2;
 
     bool occupiedBySlime = false;
     bool occupiedByPlayer = false;
@@ -49,8 +46,8 @@ public class SlimeSpawner : MonoBehaviour
 
     private IEnumerator CheckForSpawn()
     {
-        float delay = Random.Range(-delayChange, delayChange);
-        yield return new WaitForSeconds(spawnCheckInterval + delay);
+        float delay = Random.Range(-SlimeManager.inst.DelayChange, SlimeManager.inst.DelayChange);
+        yield return new WaitForSeconds(SlimeManager.inst.SpawnCheckInterval + delay);
 
         if (!occupied)
         {
@@ -90,6 +87,13 @@ public class SlimeSpawner : MonoBehaviour
             if (!occupiedBySlime) occupied = false;
 
         }
+    }
+
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        //Handles.Label(transform.position, gameObject.name);
     }
 
 }

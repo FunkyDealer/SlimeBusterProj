@@ -31,6 +31,14 @@ public class SlimeManager : MonoBehaviour
     [SerializeField]
     private List<AI_WayPoint> wayPoints = new List<AI_WayPoint>();
 
+    [SerializeField]
+    float spawnCheckInterval = 10;
+    public float SpawnCheckInterval => spawnCheckInterval;
+    [SerializeField]
+    float delayChange = 5;
+    public float DelayChange => delayChange;
+
+
     private void Awake()
     {
         if (_instance != null && _instance != this)

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class AI_WayPoint : MonoBehaviour
@@ -25,5 +26,12 @@ public class AI_WayPoint : MonoBehaviour
         {
             temp.GetArrivedStatus();
         }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Handles.color = Color.red;
+        Handles.Label(transform.position, gameObject.name);
     }
 }

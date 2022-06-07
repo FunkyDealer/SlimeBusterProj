@@ -562,7 +562,7 @@ MonoBehaviour:
   vacuumRate: 15
   regenRate: 1
   basicSpeed: 3.5
-  runSpeed: 8
+  runSpeed: 7
   TurnSpeed: 120
   damage: 1
   PrePlaced: 1
