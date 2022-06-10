@@ -568,6 +568,8 @@ MonoBehaviour:
   PrePlaced: 1
   healthFragPrefab: {fileID: 5346739927442539182, guid: ffa1262f3ebe2d1439c79b3461ca6ed2,
     type: 3}
+  staminaDrainRate: 8
+  staminaGainRate: 2
 --- !u!195 &2311557321494768483
 NavMeshAgent:
   m_ObjectHideFlags: 0

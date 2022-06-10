@@ -180,7 +180,8 @@ public class Player : MonoBehaviour
 
     private bool CheckIsGround()
     {
-        return (Physics.Raycast(feetPos.position, -Vector3.up, 0.1f));
+        Debug.DrawLine(feetPos.position, feetPos.position -Vector3.up * 0.5f, Color.red);
+        return (Physics.Raycast(feetPos.position, -Vector3.up, 0.5f));
     }
 
     private void ResetInput()

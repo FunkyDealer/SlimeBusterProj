@@ -21,6 +21,9 @@ public class VacuumCleaner : MonoBehaviour
     bool beingRefilled = false;
     float refillRate = 0;
 
+    [SerializeField]
+    LayerMask interactables;
+
     [Header("Hud Connections")]
     [SerializeField]
     private HUD_VacuumEnergyDisplay vacuumEnergyDisplay;
@@ -52,6 +55,8 @@ public class VacuumCleaner : MonoBehaviour
             currentEnergy += refillRate * Time.deltaTime;
             vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
         }
+
+
     }
 
     private void FixedUpdate()
@@ -67,6 +72,29 @@ public class VacuumCleaner : MonoBehaviour
                if (currentEnergy > 0) ParticleSystem.Play();
             }
         }
+
+       // ConeRayCast();
+    }
+
+    private void ConeRayCast()
+    {
+        Vector3 dir = transform.forward;
+        float lenght = 5;
+
+        for (int i = -20; i < 20; i++)
+        {
+            dir = GetVectorFromAngle(i * 9);
+            //dir = Quaternion.Euler(0, 0, 180) * dir;
+
+            Debug.DrawLine(transform.position, dir * lenght, Color.red);
+        }
+    }
+
+    private static Vector3 GetVectorFromAngle(float angle)
+    {
+        // angle = 0 -> 360
+        float angleRad = angle * (Mathf.PI / 180f);
+        return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
     }
 
 
@@ -86,7 +114,26 @@ public class VacuumCleaner : MonoBehaviour
     {
         if (other.CompareTag("Slime")) {
 
-            if (Active && currentEnergy > 0) other.gameObject.GetComponent<IVacuumable>().GetVacuumed();
+            if (Active && currentEnergy > 0)
+            {
+                Vector3 dir = other.bounds.center - transform.position;
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, dir, out hit, 10f, interactables)) {
+
+                    if (hit.collider.CompareTag("Slime"))
+                    {
+                        Debug.DrawLine(transform.position, hit.collider.bounds.center, Color.green);
+                        other.gameObject.GetComponent<IVacuumable>().GetVacuumed();
+                    }
+                    else
+                    {
+                        Debug.DrawLine(transform.position, hit.point, Color.red);
+                    }
+                
+                }
+
+                
+            }
 
         }
     }

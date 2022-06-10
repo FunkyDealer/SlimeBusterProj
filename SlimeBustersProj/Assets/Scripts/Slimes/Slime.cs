@@ -37,6 +37,14 @@ public class Slime : MonoBehaviour, IVacuumable
     protected AI_WayPoint currentWayPoint = null;
     public AI_WayPoint CurrentWayPoint => currentWayPoint;
 
+    [Header("Stamina")]
+    protected float maxStamina = 100;
+    protected float currentStamina = 100;
+    [SerializeField]
+    protected float staminaDrainRate = 8;
+    [SerializeField]
+    protected float staminaGainRate = 2;
+
     protected virtual void Awake()
     {
         meshAgent = GetComponent<NavMeshAgent>();

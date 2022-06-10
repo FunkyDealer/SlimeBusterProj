@@ -5754,7 +5754,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816436456329150033}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 36ff5d17863cf8547b9a6260eefa92db, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -5780,7 +5780,7 @@ MonoBehaviour:
   feetPos: {fileID: 1816436455577912374}
   mousePointLayerMask:
     serializedVersion: 2
-    m_Bits: 19
+    m_Bits: 1
   defaultHealth: 3
   neededHealthFragments: 4
   cleaner: {fileID: 1816436456391350825}
@@ -5812,15 +5812,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816436456391350826}
-  m_LocalRotation: {x: -0, y: 0.053481538, z: -0, w: 0.9985689}
-  m_LocalPosition: {x: -0.61, y: 0, z: 0.346}
+  m_LocalRotation: {x: -0, y: 0.012116426, z: -0, w: 0.9999266}
+  m_LocalPosition: {x: 0.07, y: 0, z: 0.51}
   m_LocalScale: {x: 3.512469, y: 3.1539772, z: 0.7100255}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1816436455928778576}
   m_Father: {fileID: 1816436457207173060}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 6.131, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 1.388, z: 0}
 --- !u!136 &1816436456391350824
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5851,6 +5851,9 @@ MonoBehaviour:
   ParticleSystem: {fileID: 1816436455928778574}
   maxEnergy: 100
   energyUseRate: 2
+  interactables:
+    serializedVersion: 2
+    m_Bits: 1
   vacuumEnergyDisplay: {fileID: 425067080}
 --- !u!1 &1816436457207173063
 GameObject:
@@ -5957,6 +5960,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1816436456329150029}
     m_Modifications:
+    - target: {fileID: 658076171228537298, guid: 3d526b12f50428f4488854722e70e462,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 658076171228537298, guid: 3d526b12f50428f4488854722e70e462,
         type: 3}
       propertyPath: m_Name

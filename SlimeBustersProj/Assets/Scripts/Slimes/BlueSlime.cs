@@ -51,7 +51,8 @@ public class BlueSlime : Slime, IVacuumable
     {
         base.Update();
 
-
+        if (meshAgent.speed == runSpeed && currentStamina > 0) currentStamina -= staminaDrainRate * Time.deltaTime;
+        else if (meshAgent.speed != runSpeed && currentStamina < 100) currentStamina += staminaGainRate * Time.deltaTime;
     }
 
     protected override void FixedUpdate()
@@ -59,7 +60,11 @@ public class BlueSlime : Slime, IVacuumable
         base.FixedUpdate();
 
         DebugShowDestination();
-       
+
+
+
+        if (meshAgent.speed == runSpeed && currentStamina <= 0) meshAgent.speed = basicSpeed;
+
     }
 
     IEnumerator Activate()
@@ -92,7 +97,21 @@ public class BlueSlime : Slime, IVacuumable
 
         currentAIState = S_State.Running;
         moveBehaviour.Initiate();
-        currentWayPoint = SlimeManager.inst.GetFurthestWayPoint(transform.position);
+
+        int type = Random.Range(0, 3); //type of distance, 
+
+        switch (type)
+        {
+            case 1:
+                currentWayPoint = SlimeManager.inst.GetRandomAverageFurthestWayPoint(transform.position);
+                break;
+
+            default:
+                currentWayPoint = SlimeManager.inst.GetRandomFurthestWayPoint(transform.position);
+                break;
+        }
+
+        
     }
 
     private void InitiateWandering()
