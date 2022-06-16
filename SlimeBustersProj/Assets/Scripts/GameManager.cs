@@ -55,4 +55,11 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
+
+    public static IEnumerator RestartLevel()
+    {
+        yield return new WaitForSeconds(2f);
+        //Debug.Log("restarting Level");
+        SceneManager.LoadScene(inst.nextScene, LoadSceneMode.Single);
+    }
 }

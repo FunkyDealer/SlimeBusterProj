@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701871835137946100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 7050918951053590891}
   - component: {fileID: 2101730569639219271}
   - component: {fileID: 1027475627450179145}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barn_Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 708129946358167155}
   - component: {fileID: 2468158841446335151}
   - component: {fileID: 8575551215811355006}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barn_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 3135485989875939823}
   - component: {fileID: 8828028036115141528}
   - component: {fileID: 335843083211181829}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 2749797520783314341}
   - component: {fileID: 3025302555422153153}
   - component: {fileID: 3778701263680795942}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barn_Window2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 2180676570344688686}
   - component: {fileID: 942367589525107282}
   - component: {fileID: 1967891270587546045}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Barn_Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}

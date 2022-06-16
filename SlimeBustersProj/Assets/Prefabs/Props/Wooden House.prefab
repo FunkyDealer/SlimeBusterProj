@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 834441387142997908}
   - component: {fileID: 2052501549253418895}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wooden House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 8592812054765038067}
   - component: {fileID: 4675119151245027003}
   - component: {fileID: 5033912784526425174}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Back_Window_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 8026459338952232435}
   - component: {fileID: 9205989602934450662}
   - component: {fileID: 4011691875449051715}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roof_Wooden_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 8999930708484318300}
   - component: {fileID: 8078321547361048502}
   - component: {fileID: 5078212845150701062}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chimney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 8132141912206468474}
   - component: {fileID: 5504207907986461633}
   - component: {fileID: 4797912979106546064}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right_Window_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 6424462001919744260}
   - component: {fileID: 2639127695822698235}
   - component: {fileID: 6041860549229015775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Forward_Small_Window_Frame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 1809514875535089105}
   - component: {fileID: 5008581103292159087}
   - component: {fileID: 6064042901310050807}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: House_Wooden_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 4455971465893290879}
   - component: {fileID: 5546130339598373527}
   - component: {fileID: 1921869921717287217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left_Window_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   - component: {fileID: 3658607812375948233}
   - component: {fileID: 8080555771340685964}
   - component: {fileID: 257063904555539632}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roof_Lower_wooden_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 8173041048112614694}
   - component: {fileID: 7371381636595210411}
   - component: {fileID: 7289594278579377450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Foward_Window_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -828,7 +828,7 @@ GameObject:
   - component: {fileID: 7868015025530479644}
   - component: {fileID: 7472709482843545095}
   - component: {fileID: 817472785883014286}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +911,7 @@ GameObject:
   - component: {fileID: 7562577212384388816}
   - component: {fileID: 8964464795176874014}
   - component: {fileID: 8636261362814026403}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 4645496101340002676}
   - component: {fileID: 7417997559601489161}
   - component: {fileID: 5870676662988950472}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Front_Window_small_Frame2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 2840451077026722010}
   - component: {fileID: 8512646374264309965}
   - component: {fileID: 4517005625903372111}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right_Window_Small_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1160,7 +1160,7 @@ GameObject:
   - component: {fileID: 910431948367545012}
   - component: {fileID: 4811920541395653628}
   - component: {fileID: 302279666290624935}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1243,7 +1243,7 @@ GameObject:
   - component: {fileID: 174066812131945063}
   - component: {fileID: 5229655566108635663}
   - component: {fileID: 2215860523371135231}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Front_Wooden_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1326,7 +1326,7 @@ GameObject:
   - component: {fileID: 4149539739377374727}
   - component: {fileID: 3344965989073350971}
   - component: {fileID: 2034427426167862290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Front_Window_Small_Frame3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 4900729768847822515}
   - component: {fileID: 2946694761416534867}
   - component: {fileID: 2328622290116033449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left_Window_Small_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,7 +1492,7 @@ GameObject:
   - component: {fileID: 5395536886259416301}
   - component: {fileID: 80251351249006102}
   - component: {fileID: 8848815106543528464}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Forward_Small_Window_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1575,7 +1575,7 @@ GameObject:
   - component: {fileID: 4473144800212186130}
   - component: {fileID: 6541779809207511085}
   - component: {fileID: 8995658782844077173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Front_window_Small_Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1658,7 +1658,7 @@ GameObject:
   - component: {fileID: 1181582318781967523}
   - component: {fileID: 4000146163877374482}
   - component: {fileID: 978246598791451471}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: building_001.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1741,7 +1741,7 @@ GameObject:
   - component: {fileID: 6010822145692621044}
   - component: {fileID: 2427271991461112619}
   - component: {fileID: 3510147869361516326}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1824,7 +1824,7 @@ GameObject:
   - component: {fileID: 7324233227831734786}
   - component: {fileID: 881878654579497723}
   - component: {fileID: 5234272545320605915}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1907,7 +1907,7 @@ GameObject:
   - component: {fileID: 348032706488245709}
   - component: {fileID: 8874426151497496909}
   - component: {fileID: 7026452605562229163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Back_Window_SmallFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1990,7 +1990,7 @@ GameObject:
   - component: {fileID: 6709686615874349091}
   - component: {fileID: 290548543198729963}
   - component: {fileID: 5956751801766322270}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Building
   m_TagString: Untagged
   m_Icon: {fileID: 0}

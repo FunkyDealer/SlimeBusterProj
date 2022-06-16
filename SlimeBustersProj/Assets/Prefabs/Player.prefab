@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 601262175}
   - component: {fileID: 601262174}
   - component: {fileID: 601262173}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Ingame_hud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ RectTransform:
   - {fileID: 425067079}
   - {fileID: 1096869246}
   m_Father: {fileID: 1816436456329150029}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -700,37 +700,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FragmentDisplayText: {fileID: 1148322358}
---- !u!1 &1816436455577912377
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1816436455577912374}
-  m_Layer: 0
-  m_Name: FeetPos
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1816436455577912374
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816436455577912377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1816436456329150029}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1816436455928778579
 GameObject:
   m_ObjectHideFlags: 0
@@ -5555,7 +5524,7 @@ GameObject:
   - component: {fileID: 1816436455945183592}
   - component: {fileID: 1816436455945183595}
   - component: {fileID: 1816436455945183594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5675,7 +5644,6 @@ Transform:
   m_Children:
   - {fileID: 1816436455945183597}
   - {fileID: 1816436457207173060}
-  - {fileID: 1816436455577912374}
   - {fileID: 601262176}
   - {fileID: 7460458326853865797}
   m_Father: {fileID: 0}
@@ -5777,7 +5745,6 @@ MonoBehaviour:
   maxMovementSpeed: 5
   movSmoothLerp: 0.03
   jumpForce: 7
-  feetPos: {fileID: 1816436455577912374}
   mousePointLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -5787,6 +5754,9 @@ MonoBehaviour:
   healthDisplay: {fileID: 295499339}
   remainingSlimesDisplay: {fileID: 1096869247}
   fragmentDisplay: {fileID: 1148322357}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 19
 --- !u!1 &1816436456391350826
 GameObject:
   m_ObjectHideFlags: 0
@@ -5867,7 +5837,7 @@ GameObject:
   - component: {fileID: 1816436457207173059}
   - component: {fileID: 1816436457207173058}
   - component: {fileID: 1816436457207173061}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vacuum Cleaner prop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5973,7 +5943,7 @@ PrefabInstance:
     - target: {fileID: 658076171228537299, guid: 3d526b12f50428f4488854722e70e462,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 658076171228537299, guid: 3d526b12f50428f4488854722e70e462,
         type: 3}

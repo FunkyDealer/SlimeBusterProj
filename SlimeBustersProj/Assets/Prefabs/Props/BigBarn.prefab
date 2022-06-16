@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 715828730880022642}
   - component: {fileID: 6273430518381736297}
   - component: {fileID: 1714680770862452785}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigBarn_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 2435173407943652650}
   - component: {fileID: 8122088429021439563}
   - component: {fileID: 5037964386948924541}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigBarn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 6247203773815318899}
   - component: {fileID: 2538665038183222682}
   - component: {fileID: 2790368737150160107}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigBarn_Window2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 3286049203898628114}
   - component: {fileID: 462938824223446659}
   - component: {fileID: 6752043582912861177}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigBarn_Window
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -376,7 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8323423468991654259}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigBarn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 3372852795492489177}
   - component: {fileID: 7113061645553338268}
   - component: {fileID: 2017689273291403621}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigBarn_Door2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -17,9 +17,6 @@ public class Player : MonoBehaviour
     private float jumpForce = 5f;
     private bool jumping = false; //is the playing curenttly in a jump?
 
-    [SerializeField]
-    Transform feetPos;
-
     private bool beingLaunched = false;
     private bool isGrounded = false;
 
@@ -63,7 +60,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private HUD_FragmentDisplay fragmentDisplay;
 
-
+    private float distanceGround;
+    [SerializeField]
+    private LayerMask groundMask;
 
 
     private void Awake()
@@ -77,31 +76,41 @@ public class Player : MonoBehaviour
     {
         myRigidbody = GetComponent<Rigidbody>();
 
-        
+        distanceGround = GetComponent<Collider>().bounds.extents.y;
 
         healthDisplay.UpdateHealthDisplay(currenthealth);
         fragmentDisplay.UpdateFragDisplay(currentHealthFragments);
 
+        isGrounded = CheckIsGround();
     }
 
     // Update is called once per frame
     void Update()
     {
-        movementInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        lookInput = new Vector2(Input.GetAxis("Right Horizontal"), Input.GetAxis("Right Vertical"));
+        if (isAlive)
+        {
+            movementInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+            lookInput = new Vector2(Input.GetAxis("Right Horizontal"), Input.GetAxis("Right Vertical"));
 
-        if (!jump && !jumping && isGrounded)
-        {
-            jump = Input.GetButtonDown("Jump");
+            if (!jump && !jumping && isGrounded)
+            {
+                jump = Input.GetButtonDown("Jump");
+            }
+            if (!attack)
+            {
+                attack = Input.GetButton("Fire1");
+                if (lookInput.magnitude > 0.1f) attack = true;
+            }
+            if (!interact)
+            {
+                interact = Input.GetButtonDown("Interact");
+            }
+
         }
-        if (!attack)
+        else
         {
-            attack = Input.GetButton("Fire1");
-            if (lookInput.magnitude > 0.1f) attack = true;            
-        }
-        if (!interact)
-        {
-            interact = Input.GetButtonDown("Interact");
+            ResetInput();
+            direction = new Vector3(0, direction.y, 0);
         }
     }
 
@@ -173,15 +182,15 @@ public class Player : MonoBehaviour
         else
         {
 
-        }
+        }       
 
         ResetInput();
     }
 
     private bool CheckIsGround()
     {
-        Debug.DrawLine(feetPos.position, feetPos.position -Vector3.up * 0.5f, Color.red);
-        return (Physics.Raycast(feetPos.position, -Vector3.up, 0.5f));
+        //Debug.DrawLine(transform.position, transform.position -Vector3.up * (distanceGround + 0.1f), Color.red);
+        return (Physics.Raycast(transform.position, -Vector3.up, distanceGround + 0.1f, groundMask));
     }
 
     private void ResetInput()
@@ -234,7 +243,10 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player Died");
+        StartCoroutine(GameManager.RestartLevel());
+        //Debug.Log("Player Died");
+        isAlive = false;
+        
     }
 
     public void GetRemainingSlimes(int n)

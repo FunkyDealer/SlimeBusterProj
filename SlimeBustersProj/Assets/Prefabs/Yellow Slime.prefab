@@ -923,6 +923,11 @@ MonoBehaviour:
     type: 3}
   staminaDrainRate: 10
   staminaGainRate: 6
+  validBones:
+  - {fileID: 5453434153544988203}
+  - {fileID: 2841279232298844775}
+  - {fileID: 3560142469483611613}
+  - {fileID: 3748241412302141109}
 --- !u!195 &7043889755956059542
 NavMeshAgent:
   m_ObjectHideFlags: 0

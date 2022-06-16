@@ -86,7 +86,7 @@ public class VacuumCleaner : MonoBehaviour
             dir = GetVectorFromAngle(i * 9);
             //dir = Quaternion.Euler(0, 0, 180) * dir;
 
-            Debug.DrawLine(transform.position, dir * lenght, Color.red);
+            //Debug.DrawLine(transform.position, dir * lenght, Color.red);
         }
     }
 
@@ -116,21 +116,27 @@ public class VacuumCleaner : MonoBehaviour
 
             if (Active && currentEnergy > 0)
             {
-                Vector3 dir = other.bounds.center - transform.position;
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, dir, out hit, 10f, interactables)) {
 
-                    if (hit.collider.CompareTag("Slime"))
-                    {
-                        Debug.DrawLine(transform.position, hit.collider.bounds.center, Color.green);
-                        other.gameObject.GetComponent<IVacuumable>().GetVacuumed();
-                    }
-                    else
-                    {
-                        Debug.DrawLine(transform.position, hit.point, Color.red);
-                    }
+                other.gameObject.GetComponent<IVacuumable>().GetVacuumed(transform);
+                //Collider c = other.GetComponent<Collider>();
+
+                //Vector3 dir = c.ClosestPoint(transform.position) - transform.position;
+                //RaycastHit hit;
+                //if (Physics.Raycast(transform.position, dir, out hit, 10f, interactables)) {
+
+                //    if (hit.collider.CompareTag("Slime"))
+                //    {
+                //        Debug.DrawLine(transform.position, hit.collider.bounds.center, Color.green);
+                        
+                //    }
+                //    else
+                //    {
+                //        Debug.DrawLine(transform.position, hit.point, Color.blue);
+                //        Debug.DrawLine(transform.position, c.ClosestPoint(transform.position), Color.red);
+
+                //    }
                 
-                }
+                //}
 
                 
             }

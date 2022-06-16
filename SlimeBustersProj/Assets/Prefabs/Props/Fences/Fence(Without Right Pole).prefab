@@ -120,6 +120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FenceWood
       objectReference: {fileID: 0}
+    - target: {fileID: 7426977809890925660, guid: aadcabb88b56a4644a99ad8a2fced2ea,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7807619267619292902, guid: aadcabb88b56a4644a99ad8a2fced2ea,
         type: 3}
       propertyPath: m_RootOrder

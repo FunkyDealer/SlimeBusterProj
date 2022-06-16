@@ -64,9 +64,9 @@ public class DummySlime : Slime, IVacuumable
         StartCoroutine(RunAI());
     }
 
-    public override void GetVacuumed()
+    public override void GetVacuumed(Transform point)
     {
-        base.GetVacuumed();
+        base.GetVacuumed(point);
 
 
     }
@@ -107,7 +107,7 @@ public class DummySlime : Slime, IVacuumable
 
     private void DebugShowDestination()
     {
-        Debug.DrawLine(transform.position, meshAgent.destination, Color.red);
+        //Debug.DrawLine(transform.position, meshAgent.destination, Color.red);
     }
 
     

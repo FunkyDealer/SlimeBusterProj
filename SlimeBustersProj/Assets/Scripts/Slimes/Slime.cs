@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,9 +47,20 @@ public class Slime : MonoBehaviour, IVacuumable
     [SerializeField]
     protected float staminaGainRate = 2;
 
+
+    [Header("Bones")]
+    protected SkinnedMeshRenderer skin;
+    protected Vector3[] BonesOriginalPos;
+    private int bonesNr;
+    protected bool beingVacuumed = false;
+
+    [SerializeField]
+    private List<Transform> validBones;
+
     protected virtual void Awake()
     {
         meshAgent = GetComponent<NavMeshAgent>();
+        skin = GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
     // Start is called before the first frame update
@@ -60,30 +73,120 @@ public class Slime : MonoBehaviour, IVacuumable
 
         meshAgent.speed = basicSpeed;
         meshAgent.angularSpeed = TurnSpeed;
+
+        //Bones
+        bonesNr = validBones.Count;
+        BonesOriginalPos = new Vector3[bonesNr];
+
+        for (int i = 0; i < bonesNr; i++)
+        {
+            BonesOriginalPos[i] = validBones[i].localPosition;
+        }
+
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        if (!beingVacuumed) ReplaceBones();
+
     }
 
     protected virtual void FixedUpdate()
     {
+        if (beingVacuumed) beingVacuumed = false;
+
 
     }
 
-    public virtual void GetVacuumed()
+    public virtual void GetVacuumed(Transform point)
     {
-
+        beingVacuumed = true;
         if (health > 0) health = health - vacuumRate * Time.deltaTime;
 
         else Die();
 
+        //BoneStretch(point);
     }
+
+    protected virtual void BoneStretch(Transform point)
+    {
+        Transform[] closestBones = GetClosestBones(point);
+
+        foreach (var b in closestBones)
+        {
+            b.position = Vector3.Slerp(b.position, point.position, Time.deltaTime * 2f);
+        }
+
+
+    }
+
+    //Get the 2 bones that are closest to the specified point
+    private Transform[] GetClosestBones(Transform point)
+    {
+        //Transform[] bones = skin.bones;
+       // Transform root = skin.rootBone;       
+
+        List<Tuple<Transform, float>> boneList = new List<Tuple<Transform, float>>();
+
+        foreach (var b in validBones)
+        {
+           // if (b == root) continue;
+            float dist = Vector3.Distance(b.position, point.position);
+            Tuple<Transform,float> bone = new Tuple<Transform, float>(b, dist);
+
+            boneList.Add(bone);
+        }
+
+        //boneList.OrderBy(x => x.Item2);
+        boneList = OrderList(boneList);
+
+        Transform[] ClosestBones = new Transform[2];
+
+        ClosestBones[0] = boneList[0].Item1;
+        ClosestBones[1] = boneList[1].Item1;
+        //ClosestBones[2] = boneList[2].Item1; 
+
+        return ClosestBones;
+    }
+
+    //used to order the Bones list from most distant to closest
+    private List<Tuple<Transform, float>> OrderList(List<Tuple<Transform, float>> input)
+    {
+        List<Tuple<Transform, float>> clonedList = new List<Tuple<Transform, float>>(input.Count);
+
+        for (int i = 0; i < input.Count; i++)
+        {
+            var item = input[i];
+            var currentIndex = i;
+            while (currentIndex > 0 && clonedList[currentIndex - 1].Item2 > item.Item2)
+            {
+                currentIndex--;
+            }
+            clonedList.Insert(currentIndex, item);
+        }
+
+        return clonedList;
+    }
+
+    //Place the bones in their original positions after they are displaced
+    protected virtual void ReplaceBones()
+    {
+        for (int i = 0; i < bonesNr; i++)
+        {
+            if (Vector3.Distance(validBones[i].localPosition, BonesOriginalPos[i]) > 0.001f)
+            {
+                validBones[i].localPosition = Vector3.Slerp(validBones[i].localPosition, BonesOriginalPos[i], Time.deltaTime * 2f);
+            }
+        }
+
+    }
+
+
 
     protected virtual void Die()
     {
+        skin.enabled = false;
         transform.position = new Vector3(999, 999, 999);
         SlimeManager.inst.RemoveSlime(this);
 
@@ -133,7 +236,7 @@ public class Slime : MonoBehaviour, IVacuumable
 
     protected void spawnHealthFrag()
     {
-        if (Random.value < 0.2)
+        if (UnityEngine.Random.value < 0.2)
         {
             GameObject o = Instantiate(healthFragPrefab, transform.position, Quaternion.identity);
 

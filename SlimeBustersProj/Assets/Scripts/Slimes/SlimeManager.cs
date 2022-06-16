@@ -58,8 +58,19 @@ public class SlimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartCoroutine(SpawnFirstWave());
+
+ 
+        player.GetRemainingSlimes(remainingSlimesToCapture);
+    }
+
+    public IEnumerator SpawnFirstWave()
+    {
+        yield return new WaitForSeconds(1f);
+
         int spawnCount = spawners.Count;
-        if (spawnCount > 0) {
+        if (spawnCount > 0)
+        {
 
             int currentSpawner = 0;
             for (int i = 0; i < firstWave; i++)
@@ -73,9 +84,6 @@ public class SlimeManager : MonoBehaviour
         {
             throw new System.Exception("No Spawners found when trying to spawn first Wave");
         }
-
- 
-        player.GetRemainingSlimes(remainingSlimesToCapture);
     }
 
     // Update is called once per frame

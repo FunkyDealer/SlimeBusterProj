@@ -336,9 +336,15 @@ MonoBehaviour:
   TurnSpeed: 120
   damage: 1
   PrePlaced: 1
-  healthFragPrefab: {fileID: 0}
+  healthFragPrefab: {fileID: 5346739927442539182, guid: ffa1262f3ebe2d1439c79b3461ca6ed2,
+    type: 3}
   staminaDrainRate: 8
   staminaGainRate: 2
+  validBones:
+  - {fileID: 2884834269561804542}
+  - {fileID: 4956422958899585714}
+  - {fileID: 5966894252327216392}
+  - {fileID: 6314870999133165152}
 --- !u!195 &172944840333786435
 NavMeshAgent:
   m_ObjectHideFlags: 0

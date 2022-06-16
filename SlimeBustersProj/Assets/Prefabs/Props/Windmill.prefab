@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3364158084470108959}
   - component: {fileID: 669651774848206805}
   - component: {fileID: 3364158084470108958}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WindmillCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 5863269823436739115}
   - component: {fileID: 7501405384015899717}
   - component: {fileID: 2000486017387315393}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Windmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 8427198225624828972}
   - component: {fileID: 8861007123283753460}
   - component: {fileID: 7434599908012156873}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Windmill_Blades
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -275,7 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6407830917104840109}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Windmill
   m_TagString: Untagged
   m_Icon: {fileID: 0}

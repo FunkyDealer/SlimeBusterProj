@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6337251103775586394}
   - component: {fileID: 8076791435517365392}
   - component: {fileID: 8216382073013598338}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Silo
   m_TagString: Untagged
   m_Icon: {fileID: 0}

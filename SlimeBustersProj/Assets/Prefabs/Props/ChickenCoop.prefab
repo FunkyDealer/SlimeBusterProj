@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7674104048369894950}
   - component: {fileID: 874311080960369015}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8341820343945904497}
   - component: {fileID: 1002843714010279004}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2447842203480343020}
   - component: {fileID: 1373142651578290072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Collider (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 167814151236176274}
   - component: {fileID: 2715887579376893272}
   - component: {fileID: 1687511782561478559}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChickenCoop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3686703506857440786}
   - component: {fileID: 6104553818241861977}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AI Obstacle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

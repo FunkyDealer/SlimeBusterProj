@@ -90,10 +90,10 @@ public class SlimeSpawner : MonoBehaviour
     }
 
 
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        //Handles.Label(transform.position, gameObject.name);
-    }
+    //void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    //Handles.Label(transform.position, gameObject.name);
+    //}
 
 }
