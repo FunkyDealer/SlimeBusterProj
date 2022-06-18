@@ -55,8 +55,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511421024732770312}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: 0.256, y: 0.231, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69,7 +69,7 @@ Transform:
   - {fileID: 1906959368177685556}
   m_Father: {fileID: 4308021345802628216}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 90}
 --- !u!1 &1100131696640429557
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +790,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8593055570010070746}
   - component: {fileID: 8813096084110144916}
+  - component: {fileID: 136634341485633977}
   m_Layer: 0
   m_Name: Slime_MESH
   m_TagString: Untagged
@@ -877,6 +878,26 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.11811164, y: 0.0010540336, z: -0.010604903}
     m_Extent: {x: 0.4448754, y: 0.37928122, z: 0.42900217}
   m_DirtyAABB: 0
+--- !u!95 &136634341485633977
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5784224964930352438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: d8573cbf85e23ec4a991c91c1208adb9, type: 3}
+  m_Controller: {fileID: 9100000, guid: b2efc14f4c9195a4e9a0927f7728625e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6475747154920969123
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,10 +57,15 @@ public class Slime : MonoBehaviour, IVacuumable
     [SerializeField]
     private List<Transform> validBones;
 
+    protected Animator myAnimator;
+
     protected virtual void Awake()
     {
         meshAgent = GetComponent<NavMeshAgent>();
         skin = GetComponentInChildren<SkinnedMeshRenderer>();
+        myAnimator = GetComponentInChildren<Animator>();
+
+        
     }
 
     // Start is called before the first frame update
