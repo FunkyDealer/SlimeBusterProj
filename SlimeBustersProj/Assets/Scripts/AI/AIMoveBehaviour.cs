@@ -43,7 +43,7 @@ public class AIMoveBehaviour : AIBehaviour
 
     public override bool Run(Vector3 target, NavMeshAgent agent)
     {
-        agent.SetDestination(target);
+        if (agent.enabled) agent.SetDestination(target);
 
         if (arrived)
         {

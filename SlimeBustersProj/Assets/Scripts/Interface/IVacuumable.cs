@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IVacuumable
 {
-    public void GetVacuumed(Transform point);
+    public void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce);
 }

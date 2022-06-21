@@ -25,6 +25,9 @@ public class Slime : MonoBehaviour, IVacuumable
     protected float TurnSpeed = 120;
     [SerializeField]
     protected int damage = 1;
+    protected bool alive = true;
+    protected bool dying = false;
+    protected bool beingRemoved = false;
 
 
     public bool PrePlaced = true; //whether the slime was pre placed in the level(true) or spawned by a spawner(false)
@@ -58,14 +61,23 @@ public class Slime : MonoBehaviour, IVacuumable
     private List<Transform> validBones;
 
     protected Animator myAnimator;
+    protected Rigidbody myRigidbody;
+
+    private float boneStretchSpeed = 1f;
+
+    //Dying Stuff
+    private Vector3 vacuumForce = Vector3.zero; //Force that pulls
+    private float vacuumSpeed = 3f; //Speed for when dying
+    private Transform vacuumPoint = null; //point of vacuum
+    private float maxDistanceWhenDying = 0; //Distance from vacuum point at which the slime died
 
     protected virtual void Awake()
     {
         meshAgent = GetComponent<NavMeshAgent>();
         skin = GetComponentInChildren<SkinnedMeshRenderer>();
         myAnimator = GetComponentInChildren<Animator>();
+        myRigidbody = GetComponent<Rigidbody>();
 
-        
     }
 
     // Start is called before the first frame update
@@ -95,6 +107,8 @@ public class Slime : MonoBehaviour, IVacuumable
     {
         if (!beingVacuumed) ReplaceBones();
 
+
+
     }
 
     protected virtual void FixedUpdate()
@@ -102,16 +116,56 @@ public class Slime : MonoBehaviour, IVacuumable
         if (beingVacuumed) beingVacuumed = false;
 
 
+        //myRigidbody.velocity += vacuumForce * Time.deltaTime;
+        transform.position += vacuumForce * Time.deltaTime;
+
+
+        vacuumForce = Vector3.zero;
+
+        if (!alive && dying)
+        {
+            transform.position = Vector3.Slerp(transform.position, vacuumPoint.position, Time.deltaTime * vacuumSpeed);
+
+            //newscale = (maxScale * distance) / maxDistance
+            float distance = Vector3.Distance(vacuumPoint.position, transform.position);
+            float newScale = 1.5f * distance / maxDistanceWhenDying;
+
+            if (newScale > 1.5f) newScale = 1.5f;
+
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+
+            if (distance < 0.4f)
+            {
+                vacuumForce = Vector3.zero;
+                dying = false;
+                if (!beingRemoved) RemoveSlime();
+            }
+        }
+
     }
 
-    public virtual void GetVacuumed(Transform point)
+    public virtual void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce)
     {
         beingVacuumed = true;
         if (health > 0) health = health - vacuumRate * Time.deltaTime;
 
-        else Die();
+        else
+        {
+            if (alive) Die(point);
+        }
 
-        //BoneStretch(point);
+        if (alive)
+        {
+            //BoneStretch(point);
+
+            Vector3 direction = new Vector3(point.position.x, transform.position.y, point.position.z) - transform.position;
+            direction.Normalize();
+
+            //power = (maxPower-minPower) * DistanceToPoint + minPower
+            float power = (maxVacuumForce - minVacuumForce) * (Vector3.Distance(new Vector3(point.position.x, transform.position.y, point.position.z), transform.position)) + minVacuumForce;
+
+            vacuumForce = direction * power;
+        }
     }
 
     protected virtual void BoneStretch(Transform point)
@@ -120,25 +174,23 @@ public class Slime : MonoBehaviour, IVacuumable
 
         foreach (var b in closestBones)
         {
-            b.position = Vector3.Slerp(b.position, point.position, Time.deltaTime * 2f);
+            b.position = Vector3.Slerp(b.position, point.position, Time.deltaTime * boneStretchSpeed);
         }
-
-
     }
 
     //Get the 2 bones that are closest to the specified point
     private Transform[] GetClosestBones(Transform point)
     {
         //Transform[] bones = skin.bones;
-       // Transform root = skin.rootBone;       
+        // Transform root = skin.rootBone;       
 
         List<Tuple<Transform, float>> boneList = new List<Tuple<Transform, float>>();
 
         foreach (var b in validBones)
         {
-           // if (b == root) continue;
+            // if (b == root) continue;
             float dist = Vector3.Distance(b.position, point.position);
-            Tuple<Transform,float> bone = new Tuple<Transform, float>(b, dist);
+            Tuple<Transform, float> bone = new Tuple<Transform, float>(b, dist);
 
             boneList.Add(bone);
         }
@@ -187,24 +239,37 @@ public class Slime : MonoBehaviour, IVacuumable
 
     }
 
-
-
-    protected virtual void Die()
+    protected virtual void Die(Transform vacuumPos)
     {
+        alive = false;
+        dying = true;
+        myRigidbody.useGravity = false;
+        meshAgent.enabled = false;
+        vacuumPoint = vacuumPos;
+        Vector3 dir = vacuumPos.position - transform.position;
+        maxDistanceWhenDying = Vector3.Distance(vacuumPos.position, transform.position);
+        dir.Normalize();
+        vacuumForce = Vector3.zero;
+
+
+        SlimeManager.inst.RemoveSlime(this);
+    }
+
+    protected virtual void RemoveSlime()
+    {
+        spawnHealthFrag();
         skin.enabled = false;
         transform.position = new Vector3(999, 999, 999);
-        SlimeManager.inst.RemoveSlime(this);
-
-        spawnHealthFrag();
+        beingRemoved = true;
 
         StartCoroutine(BeDestroyed());
-        
     }
 
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) {
+        if (alive && collision.gameObject.CompareTag("Player"))
+        {
 
             collision.gameObject.GetComponent<Player>().GetDamage(damage, transform.position);
 
@@ -220,7 +285,7 @@ public class Slime : MonoBehaviour, IVacuumable
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        
+
     }
 
     protected virtual void OnTriggerExit(Collider other)

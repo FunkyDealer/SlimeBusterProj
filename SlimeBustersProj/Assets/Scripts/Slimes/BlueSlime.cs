@@ -39,6 +39,7 @@ public class BlueSlime : Slime, IVacuumable
         wanderBehaviour.Initiate();
 
         moveBehaviour = GetComponent<AIMoveBehaviour>();
+        SetAnimator();
 
         StartCoroutine(Activate()); //Slimes activate after x seconds
 
@@ -62,9 +63,35 @@ public class BlueSlime : Slime, IVacuumable
         DebugShowDestination();
 
 
+        SetAnimator();
 
         if (meshAgent.speed == runSpeed && currentStamina <= 0) meshAgent.speed = basicSpeed;
+        
+    }
 
+    private void SetAnimator()
+    {
+        if (currentAIState == S_State.Idle)
+        {
+            myAnimator.SetBool("Walking", false);
+            myAnimator.SetBool("Running", false);
+            return;
+        }
+
+        if (meshAgent.speed == basicSpeed)
+        {
+            myAnimator.SetBool("Walking", true);
+            myAnimator.SetBool("Running", false);
+        }
+        else if (meshAgent.speed == runSpeed)
+        {
+            myAnimator.SetBool("Walking", false);
+            myAnimator.SetBool("Running", true);
+        }
+        else
+        {
+
+        }
     }
 
     IEnumerator Activate()
@@ -75,9 +102,9 @@ public class BlueSlime : Slime, IVacuumable
 
         StartCoroutine(RunAI());
     }
-    public override void GetVacuumed(Transform point)
+    public override void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce)
     {
-        base.GetVacuumed(point);
+        base.GetVacuumed(point, maxVacuumForce, minVacuumForce);
 
 
     }

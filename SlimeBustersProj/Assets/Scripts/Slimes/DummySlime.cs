@@ -64,9 +64,9 @@ public class DummySlime : Slime, IVacuumable
         StartCoroutine(RunAI());
     }
 
-    public override void GetVacuumed(Transform point)
+    public override void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce)
     {
-        base.GetVacuumed(point);
+        base.GetVacuumed(point, maxVacuumForce, minVacuumForce);
 
 
     }

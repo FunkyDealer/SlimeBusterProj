@@ -22,11 +22,18 @@ public class VacuumCleaner : MonoBehaviour
     float refillRate = 0;
 
     [SerializeField]
+    float maxVacuumForce = 1f;
+    [SerializeField]
+    float minVacuumForce = 0.15f;
+
+    [SerializeField]
     LayerMask interactables;
 
     [Header("Hud Connections")]
     [SerializeField]
     private HUD_VacuumEnergyDisplay vacuumEnergyDisplay;
+
+
 
     private void Awake()
     {
@@ -117,7 +124,7 @@ public class VacuumCleaner : MonoBehaviour
             if (Active && currentEnergy > 0)
             {
 
-                other.gameObject.GetComponent<IVacuumable>().GetVacuumed(transform);
+                other.gameObject.GetComponent<IVacuumable>().GetVacuumed(transform, maxVacuumForce, minVacuumForce);
                 //Collider c = other.GetComponent<Collider>();
 
                 //Vector3 dir = c.ClosestPoint(transform.position) - transform.position;

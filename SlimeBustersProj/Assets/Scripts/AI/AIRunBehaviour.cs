@@ -46,7 +46,7 @@ public class AIRunBehaviour : AIBehaviour
             Vector3 dirToTarget = transform.position - target.transform.position;
             Vector3 newPos = transform.position + dirToTarget;
 
-            agent.SetDestination(newPos);
+        if (agent.enabled) agent.SetDestination(newPos);
 
 
         if (!inTargetRange) return true; //sucessefully escaped

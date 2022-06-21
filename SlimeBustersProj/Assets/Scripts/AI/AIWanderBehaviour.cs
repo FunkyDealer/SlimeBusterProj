@@ -53,7 +53,7 @@ public class AIWanderBehaviour : AIBehaviour
         }
 
 
-        agent.SetDestination(destination);
+        if (agent.enabled) agent.SetDestination(destination);
 
         if (inTargetRange) return false;
         else return true;
