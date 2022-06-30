@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1b28b2610fa4045b63339d99d9bb31, type: 3}
+  m_Name: 9D7607A2-FD3B-41E6-98C3-FA44D7C3AFA6
+  m_EditorClassIdentifier: 
+  objectName: Play_Slime_Walk
+  id: 486688722
+  guid: 9D7607A2-FD3B-41E6-98C3-FA44D7C3AFA6

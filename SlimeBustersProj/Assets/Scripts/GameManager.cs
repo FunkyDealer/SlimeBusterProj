@@ -52,7 +52,8 @@ public class GameManager : MonoBehaviour
     private IEnumerator NextLevel()
     {
         yield return new WaitForSeconds(changeLevelTime);
-
+        AkSoundEngine.StopAll();
+        
         SceneManager.LoadScene(nextScene, LoadSceneMode.Single);
     }
 
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         //Debug.Log("restarting Level");
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene(inst.nextScene, LoadSceneMode.Single);
     }
 }

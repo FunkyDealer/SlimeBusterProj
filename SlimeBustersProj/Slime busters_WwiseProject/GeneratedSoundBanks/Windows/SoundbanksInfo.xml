@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="140">
+	<RootPaths>
+		<ProjectRoot>B:\Unity projects\Slime busters\Slime busters_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>B:\Unity projects\Slime busters\Slime busters_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>B:\Unity projects\Slime busters\Slime busters_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="2077568298">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3161908922" Language="SFX" Hash="2485911853">
+			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<IncludedEvents>
+				<Event Id="472891535" Name="Play_Energy_Regen_PickUp" ObjectPath="\Events\Default Work Unit\Play_Energy_Regen_PickUp" DurationType="OneShot" DurationMin="2.02" DurationMax="2.02">
+					<IncludedMemoryFiles>
+						<File Id="342022084" Language="SFX">
+							<ShortName>Energy Regen PickUp.wav</ShortName>
+							<Path>SFX\Energy Regen PickUp_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3394678998" Name="Play_Energy_Station_backGround" ObjectPath="\Events\Default Work Unit\Energy Station\Play_Energy_Station_backGround" MaxAttenuation="40." DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="535244137" Language="SFX">
+							<ShortName>Energy Station Regen backGround Loop.wav</ShortName>
+							<Path>SFX\Energy Station Regen backGround Loop_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4219374422" Name="Play_Energy_Station_Charge" ObjectPath="\Events\Default Work Unit\Energy Station\Play_Energy_Station_Charge" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="351176319" Language="SFX">
+							<ShortName>Energy Regen Station Loop.wav</ShortName>
+							<Path>SFX\Energy Regen Station Loop_D79FB2B7.wem</Path>
+						</File>
+						<File Id="854601314" Language="SFX">
+							<ShortName>Energy Regen Station Start.wav</ShortName>
+							<Path>SFX\Energy Regen Station Start_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3854155799" Name="Play_FootSteps" ObjectPath="\Events\Default Work Unit\Player\Play_FootSteps" DurationType="OneShot" DurationMin="0.231837" DurationMax="0.241361">
+					<IncludedMemoryFiles>
+						<File Id="61798196" Language="SFX">
+							<ShortName>FootSteps2.wav</ShortName>
+							<Path>SFX\FootSteps2_10C4C929.wem</Path>
+						</File>
+						<File Id="107296982" Language="SFX">
+							<ShortName>FootSteps5.wav</ShortName>
+							<Path>SFX\FootSteps5_10C4C929.wem</Path>
+						</File>
+						<File Id="730702024" Language="SFX">
+							<ShortName>FootSteps3.wav</ShortName>
+							<Path>SFX\FootSteps3_10C4C929.wem</Path>
+						</File>
+						<File Id="989725161" Language="SFX">
+							<ShortName>FootSteps1.wav</ShortName>
+							<Path>SFX\FootSteps1_10C4C929.wem</Path>
+						</File>
+						<File Id="1067120340" Language="SFX">
+							<ShortName>FootSteps4.wav</ShortName>
+							<Path>SFX\FootSteps4_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2121812230" Name="Play_FragmentPickUp" ObjectPath="\Events\Default Work Unit\Play_FragmentPickUp" DurationType="OneShot" DurationMin="0.336199" DurationMax="0.377371">
+					<IncludedMemoryFiles>
+						<File Id="825306661" Language="SFX">
+							<ShortName>FragmentPickUp.wav</ShortName>
+							<Path>SFX\FragmentPickUp_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2856985320" Name="Play_HealthPickUp" ObjectPath="\Events\Default Work Unit\Play_HealthPickUp" DurationType="OneShot" DurationMin="1.132649" DurationMax="1.271356">
+					<IncludedMemoryFiles>
+						<File Id="99981450" Language="SFX">
+							<ShortName>HealthPickUp.wav</ShortName>
+							<Path>SFX\HealthPickUp_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="608236531" Name="Play_HealthUp" ObjectPath="\Events\Default Work Unit\Play_HealthUp" DurationType="OneShot" DurationMin="0.582426" DurationMax="0.582426">
+					<IncludedMemoryFiles>
+						<File Id="728881695" Language="SFX">
+							<ShortName>HealthUp.wav</ShortName>
+							<Path>SFX\HealthUp_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3689126666" Name="Play_Jump" ObjectPath="\Events\Default Work Unit\Player\Jump\Play_Jump" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<IncludedMemoryFiles>
+						<File Id="48127726" Language="SFX">
+							<ShortName>Jump.wav</ShortName>
+							<Path>SFX\Jump_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3297008698" Name="Play_Jump_Land" ObjectPath="\Events\Default Work Unit\Player\Jump\Play_Jump_Land" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<IncludedMemoryFiles>
+						<File Id="791527688" Language="SFX">
+							<ShortName>Jump Land.wav</ShortName>
+							<Path>SFX\Jump Land_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2111898282" Name="Play_Level1Track" ObjectPath="\Events\Default Work Unit\Music\Play_Level1Track" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="907317892" Language="SFX">
+							<ShortName>Level1Track.wav</ShortName>
+							<Path>SFX\Level1Track_D79FB2B7.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2410481860" Name="Play_Player_Hurt_Voice" ObjectPath="\Events\Default Work Unit\Player\Play_Player_Hurt_Voice" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<IncludedMemoryFiles>
+						<File Id="16830251" Language="SFX">
+							<ShortName>Player Hurt 3.wav</ShortName>
+							<Path>SFX\Player Hurt 3_10C4C929.wem</Path>
+						</File>
+						<File Id="49373084" Language="SFX">
+							<ShortName>Player Hurt 1.wav</ShortName>
+							<Path>SFX\Player Hurt 1_10C4C929.wem</Path>
+						</File>
+						<File Id="975545179" Language="SFX">
+							<ShortName>Player Hurt 4.wav</ShortName>
+							<Path>SFX\Player Hurt 4_10C4C929.wem</Path>
+						</File>
+						<File Id="1070837762" Language="SFX">
+							<ShortName>Player Hurt 2.wav</ShortName>
+							<Path>SFX\Player Hurt 2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3770280562" Name="Play_Slime_Impacts" ObjectPath="\Events\Default Work Unit\Slimes\Play_Slime_Impacts" DurationType="OneShot" DurationMin="1." DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="483229021" Language="SFX">
+							<ShortName>player Impact Sound 2.wav</ShortName>
+							<Path>SFX\player Impact Sound 2_10C4C929.wem</Path>
+						</File>
+						<File Id="662180827" Language="SFX">
+							<ShortName>player Impact Sound 4.wav</ShortName>
+							<Path>SFX\player Impact Sound 4_10C4C929.wem</Path>
+						</File>
+						<File Id="808712315" Language="SFX">
+							<ShortName>player Impact Sound 3.wav</ShortName>
+							<Path>SFX\player Impact Sound 3_10C4C929.wem</Path>
+						</File>
+						<File Id="908126126" Language="SFX">
+							<ShortName>player Impact Sound 1.wav</ShortName>
+							<Path>SFX\player Impact Sound 1_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="757323204" Name="Play_Slime_Run" ObjectPath="\Events\Default Work Unit\Slimes\Slimes Movement\Play_Slime_Run" MaxAttenuation="50." DurationType="OneShot" DurationMin="1." DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="193951008" Language="SFX">
+							<ShortName>Slimes Run 1.wav</ShortName>
+							<Path>SFX\Slimes Run 1_10C4C929.wem</Path>
+						</File>
+						<File Id="785823841" Language="SFX">
+							<ShortName>Slimes Run 2.wav</ShortName>
+							<Path>SFX\Slimes Run 2_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="227719812" Name="Play_Slime_sucked" ObjectPath="\Events\Default Work Unit\Vacuum\Play_Slime_sucked" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<IncludedMemoryFiles>
+						<File Id="525589957" Language="SFX">
+							<ShortName>Slime sucked Sound.wav</ShortName>
+							<Path>SFX\Slime sucked Sound_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="486688722" Name="Play_Slime_Walk" ObjectPath="\Events\Default Work Unit\Slimes\Slimes Movement\Play_Slime_Walk" MaxAttenuation="50." DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
+					<IncludedMemoryFiles>
+						<File Id="191231930" Language="SFX">
+							<ShortName>Slimes Walk 3.wav</ShortName>
+							<Path>SFX\Slimes Walk 3_10C4C929.wem</Path>
+						</File>
+						<File Id="205295464" Language="SFX">
+							<ShortName>Slimes Walk 1.wav</ShortName>
+							<Path>SFX\Slimes Walk 1_10C4C929.wem</Path>
+						</File>
+						<File Id="356702646" Language="SFX">
+							<ShortName>Slimes Walk 2.wav</ShortName>
+							<Path>SFX\Slimes Walk 2_10C4C929.wem</Path>
+						</File>
+						<File Id="705700893" Language="SFX">
+							<ShortName>Slimes Walk 4.wav</ShortName>
+							<Path>SFX\Slimes Walk 4_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="4226331123" Name="Play_Vacuum" ObjectPath="\Events\Default Work Unit\Vacuum\Play_Vacuum" DurationType="Infinite">
+					<IncludedMemoryFiles>
+						<File Id="28413886" Language="SFX">
+							<ShortName>Vacuum Cleaner Loop.wav</ShortName>
+							<Path>SFX\Vacuum Cleaner Loop_D79FB2B7.wem</Path>
+						</File>
+						<File Id="659249513" Language="SFX">
+							<ShortName>Vacuum Cleaner Start.wav</ShortName>
+							<Path>SFX\Vacuum Cleaner Start_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3955858708" Name="Stop_Energy_Station_Charge" ObjectPath="\Events\Default Work Unit\Energy Station\Stop_Energy_Station_Charge" DurationType="OneShot" DurationMin="1." DurationMax="1.">
+					<IncludedMemoryFiles>
+						<File Id="869163709" Language="SFX">
+							<ShortName>Energy Regen Station End.wav</ShortName>
+							<Path>SFX\Energy Regen Station End_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3206947708" Name="Stop_Level1Track" ObjectPath="\Events\Default Work Unit\Music\Stop_Level1Track" MaxAttenuation="0." DurationType="OneShot" DurationMin="0." DurationMax="0."/>
+				<Event Id="3044255001" Name="Stop_Vacuum" ObjectPath="\Events\Default Work Unit\Vacuum\Stop_Vacuum" DurationType="OneShot" DurationMin="2." DurationMax="2.">
+					<IncludedMemoryFiles>
+						<File Id="30408524" Language="SFX">
+							<ShortName>Vacuum Cleaner End.wav</ShortName>
+							<Path>SFX\Vacuum Cleaner End_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

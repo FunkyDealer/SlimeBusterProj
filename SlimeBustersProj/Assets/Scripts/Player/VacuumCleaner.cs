@@ -25,6 +25,8 @@ public class VacuumCleaner : MonoBehaviour
     float maxVacuumForce = 1f;
     [SerializeField]
     float minVacuumForce = 0.15f;
+    [SerializeField]
+    float forceMultiplier;
 
     [SerializeField]
     LayerMask interactables;
@@ -32,8 +34,6 @@ public class VacuumCleaner : MonoBehaviour
     [Header("Hud Connections")]
     [SerializeField]
     private HUD_VacuumEnergyDisplay vacuumEnergyDisplay;
-
-
 
     private void Awake()
     {
@@ -45,7 +45,7 @@ public class VacuumCleaner : MonoBehaviour
     {
         ParticleSystem.Stop();
 
-        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
+        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy, maxEnergy);
     }
 
     // Update is called once per frame
@@ -54,16 +54,14 @@ public class VacuumCleaner : MonoBehaviour
         if (Active && currentEnergy > 0)
         {
             currentEnergy -= energyUseRate * Time.deltaTime;
-            vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
+            vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy, maxEnergy);
         }
 
         if (beingRefilled && currentEnergy < 100)
         {
             currentEnergy += refillRate * Time.deltaTime;
-            vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
+            vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy, maxEnergy);
         }
-
-
     }
 
     private void FixedUpdate()
@@ -104,16 +102,16 @@ public class VacuumCleaner : MonoBehaviour
         return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
     }
 
-
     public void Activate()
     {
         Active = true;
-        
+        AkSoundEngine.PostEvent("Play_Vacuum", gameObject);
     }
 
     public void Deactivate()
     {
         Active = false;
+        AkSoundEngine.PostEvent("Stop_Vacuum", gameObject);
         if (ParticleSystem.isPlaying) ParticleSystem.Stop();
     }
 
@@ -124,7 +122,7 @@ public class VacuumCleaner : MonoBehaviour
             if (Active && currentEnergy > 0)
             {
 
-                other.gameObject.GetComponent<IVacuumable>().GetVacuumed(transform, maxVacuumForce, minVacuumForce);
+                other.gameObject.GetComponent<IVacuumable>().GetVacuumed(transform, maxVacuumForce, minVacuumForce, forceMultiplier);
                 //Collider c = other.GetComponent<Collider>();
 
                 //Vector3 dir = c.ClosestPoint(transform.position) - transform.position;
@@ -155,13 +153,13 @@ public class VacuumCleaner : MonoBehaviour
     {
         currentEnergy += ammount;
         if (currentEnergy > maxEnergy) currentEnergy = maxEnergy;
-        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
+        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy, maxEnergy);
     }
 
     public void RefillEnergy()
     {
         currentEnergy = maxEnergy;
-        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy);
+        vacuumEnergyDisplay.UpdateEnergyDisplay((int)currentEnergy, maxEnergy);
     }
 
     public void StartRefill(float rate)

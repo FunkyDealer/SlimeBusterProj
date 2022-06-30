@@ -19,12 +19,18 @@ public class EnergyRefillPickUp : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        transform.parent.transform.Rotate(transform.parent.transform.up, 1f);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             other.gameObject.GetComponent<Player>().Cleaner.RefillEnergy(50);
-            Destroy(this.gameObject);
+            AkSoundEngine.PostEvent("Play_Energy_Regen_PickUp", gameObject);
+            Destroy(this.transform.parent.gameObject);
         }
     }
 

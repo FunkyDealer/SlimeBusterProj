@@ -24,6 +24,6 @@ public class HUD_RemainingSlimesDisplay : MonoBehaviour
 
     public void UpdateSlimesDisplay(int slimes)
     {
-        remainingSlimesText.text = $"{slimes} slimes left";
+        remainingSlimesText.text = $"{slimes}";
     }
 }

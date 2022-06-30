@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B21180F0-F228-4A7B-82C3-058B72EAC3D1}" SchemaVersion="103">
+	<AudioObjects>
+		<WorkUnit Name="Music" ID="{B21180F0-F228-4A7B-82C3-058B72EAC3D1}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="Level1Track" ID="{7A3E0D0B-E8B1-4387-A68D-8A700F74B5D1}" ShortID="955526147">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music" ID="{5BC2A2C0-692B-4D40-BFEF-DDEE42B8CC16}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Level1Track" ID="{4C984990-8401-4868-9103-EA14893E41CF}">
+							<Language>SFX</Language>
+							<AudioFile>Level1Track.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="907317892"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ObjectLists/>
+					<ActiveSourceList>
+						<ActiveSource Name="Level1Track" ID="{4C984990-8401-4868-9103-EA14893E41CF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

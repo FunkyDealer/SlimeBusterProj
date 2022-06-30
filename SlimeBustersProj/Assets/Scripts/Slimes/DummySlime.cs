@@ -22,6 +22,7 @@ public class DummySlime : Slime, IVacuumable
     }
 
 
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -32,8 +33,19 @@ public class DummySlime : Slime, IVacuumable
         StartCoroutine(Activate()); //Slimes activate after x seconds
 
 
-
+        //StartCoroutine(PlayWalkSound());
     }
+
+    //test purpose
+    private IEnumerator PlayWalkSound()
+    {
+        yield return new WaitForSeconds(3);
+
+        AkSoundEngine.PostEvent("Play_Slime_Walk", gameObject);
+
+        StartCoroutine(PlayWalkSound());
+    }
+
 
     // Update is called once per frame
     protected override void Update()
@@ -56,6 +68,12 @@ public class DummySlime : Slime, IVacuumable
 
     }
 
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+
+    }
+
     IEnumerator Activate()
     {
         yield return new WaitForSeconds(activationTime);
@@ -64,9 +82,9 @@ public class DummySlime : Slime, IVacuumable
         StartCoroutine(RunAI());
     }
 
-    public override void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce)
+    public override void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce, float multiplier)
     {
-        base.GetVacuumed(point, maxVacuumForce, minVacuumForce);
+        base.GetVacuumed(point, maxVacuumForce, minVacuumForce, multiplier);
 
 
     }

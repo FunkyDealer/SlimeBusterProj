@@ -38,8 +38,25 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d9de71236655af43bfa71ff02c16f7f6
     GuidInternal: 
-    m_lastTime: -8585460367874788373
+    m_lastTime: -8585454195796281709
     List:
+    - name: Effects
+      guid: 77a847cddf4d7245a8e43b86ad2fbe59
+      id: 1942696649
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9de71236655af43bfa71ff02c16f7f6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Effects
+        ObjectType: 2
+        guid: 77a847cddf4d7245a8e43b86ad2fbe59
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Effects
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
       id: 3803692087
@@ -54,6 +71,43 @@ MonoBehaviour:
         ObjectType: 2
         guid: d8a41415a61d2a41a17e75ca0c2149f3
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+    - name: Music
+      guid: c0a2c25b2b69404dbfefddee42b8cc16
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9de71236655af43bfa71ff02c16f7f6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Music
+        ObjectType: 2
+        guid: c0a2c25b2b69404dbfefddee42b8cc16
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: Vacuum
+      guid: 20b1b12b65621d48a2260ec0a284aab4
+      id: 3699816212
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9de71236655af43bfa71ff02c16f7f6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Effects
+        ObjectType: 2
+        guid: 77a847cddf4d7245a8e43b86ad2fbe59
+      - ElementName: Vacuum
+        ObjectType: 2
+        guid: 20b1b12b65621d48a2260ec0a284aab4
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Effects\Vacuum
   BankWwu:
   - PhysicalPath: SoundBanks\Default Work Unit.wwu
     PathAndIcons:
@@ -66,8 +120,22 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 59e48ffc1f223644bdf8e0efcbf42a15
     GuidInternal: 
-    m_lastTime: -8585460367876428779
-    List: []
+    m_lastTime: -8585452566514755806
+    List:
+    - name: Main
+      guid: ab6c37ac2850ec41bae7d0611b87c1ff
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 59e48ffc1f223644bdf8e0efcbf42a15
+      - ElementName: Main
+        ObjectType: 7
+        guid: ab6c37ac2850ec41bae7d0611b87c1ff
+      Path: SoundBanks\Default Work Unit\Main
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
@@ -80,8 +148,513 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: f570bc748b501142bd41a5fead724b86
     GuidInternal: 
-    m_lastTime: -8585460367875449777
-    List: []
+    m_lastTime: -8585452566715170775
+    List:
+    - name: Energy Station
+      guid: ea244af3a5bd8d4fb6353d23434dafcd
+      id: 669843773
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Energy Station
+        ObjectType: 4
+        guid: ea244af3a5bd8d4fb6353d23434dafcd
+      Path: Events\Default Work Unit\Energy Station
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Jump
+      guid: c4ae5a2f4f0dd64591c84ef0ed65a84d
+      id: 3833651337
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Player
+        ObjectType: 4
+        guid: db9848f295cc764eb853f1b7c2e81432
+      - ElementName: Jump
+        ObjectType: 4
+        guid: c4ae5a2f4f0dd64591c84ef0ed65a84d
+      Path: Events\Default Work Unit\Player\Jump
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Music
+      guid: 4a76246bec9a534cb0546c1b3c89e91a
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Music
+        ObjectType: 4
+        guid: 4a76246bec9a534cb0546c1b3c89e91a
+      Path: Events\Default Work Unit\Music
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Energy_Regen_PickUp
+      guid: ed494df007db4648ba75caef0b6fc39c
+      id: 472891535
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Play_Energy_Regen_PickUp
+        ObjectType: 3
+        guid: ed494df007db4648ba75caef0b6fc39c
+      Path: Events\Default Work Unit\Play_Energy_Regen_PickUp
+      maxAttenuation: 0
+      maxDuration: 2.02
+      minDuration: 2.02
+    - name: Play_Energy_Station_backGround
+      guid: 5d709f5d6deb05479d94f2f157b28783
+      id: 3394678998
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Energy Station
+        ObjectType: 4
+        guid: ea244af3a5bd8d4fb6353d23434dafcd
+      - ElementName: Play_Energy_Station_backGround
+        ObjectType: 3
+        guid: 5d709f5d6deb05479d94f2f157b28783
+      Path: Events\Default Work Unit\Energy Station\Play_Energy_Station_backGround
+      maxAttenuation: 40
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Energy_Station_Charge
+      guid: b3a6b471ad8de9498710effed71fb9b0
+      id: 4219374422
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Energy Station
+        ObjectType: 4
+        guid: ea244af3a5bd8d4fb6353d23434dafcd
+      - ElementName: Play_Energy_Station_Charge
+        ObjectType: 3
+        guid: b3a6b471ad8de9498710effed71fb9b0
+      Path: Events\Default Work Unit\Energy Station\Play_Energy_Station_Charge
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_FootSteps
+      guid: 55d1bae01110ec46a519e02c84bc6e8d
+      id: 3854155799
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Player
+        ObjectType: 4
+        guid: db9848f295cc764eb853f1b7c2e81432
+      - ElementName: Play_FootSteps
+        ObjectType: 3
+        guid: 55d1bae01110ec46a519e02c84bc6e8d
+      Path: Events\Default Work Unit\Player\Play_FootSteps
+      maxAttenuation: 0
+      maxDuration: 0.241361
+      minDuration: 0.231837
+    - name: Play_FragmentPickUp
+      guid: d49f13415976b64db91cab7cd7cd9290
+      id: 2121812230
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Play_FragmentPickUp
+        ObjectType: 3
+        guid: d49f13415976b64db91cab7cd7cd9290
+      Path: Events\Default Work Unit\Play_FragmentPickUp
+      maxAttenuation: 0
+      maxDuration: 0.377371
+      minDuration: 0.336199
+    - name: Play_HealthPickUp
+      guid: aacc77370ed0c04ca47047bf620cf4b3
+      id: 2856985320
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Play_HealthPickUp
+        ObjectType: 3
+        guid: aacc77370ed0c04ca47047bf620cf4b3
+      Path: Events\Default Work Unit\Play_HealthPickUp
+      maxAttenuation: 0
+      maxDuration: 1.271356
+      minDuration: 1.132649
+    - name: Play_HealthUp
+      guid: be7c8fcf293ac84684fad54a2596ff8f
+      id: 608236531
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Play_HealthUp
+        ObjectType: 3
+        guid: be7c8fcf293ac84684fad54a2596ff8f
+      Path: Events\Default Work Unit\Play_HealthUp
+      maxAttenuation: 0
+      maxDuration: 0.582426
+      minDuration: 0.582426
+    - name: Play_Jump
+      guid: 8de1ce4d93eaf14b88805ea8f18f95b6
+      id: 3689126666
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Player
+        ObjectType: 4
+        guid: db9848f295cc764eb853f1b7c2e81432
+      - ElementName: Jump
+        ObjectType: 4
+        guid: c4ae5a2f4f0dd64591c84ef0ed65a84d
+      - ElementName: Play_Jump
+        ObjectType: 3
+        guid: 8de1ce4d93eaf14b88805ea8f18f95b6
+      Path: Events\Default Work Unit\Player\Jump\Play_Jump
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: Play_Jump_Land
+      guid: 8f0c614052d1074cbd833e5ab0284f36
+      id: 3297008698
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Player
+        ObjectType: 4
+        guid: db9848f295cc764eb853f1b7c2e81432
+      - ElementName: Jump
+        ObjectType: 4
+        guid: c4ae5a2f4f0dd64591c84ef0ed65a84d
+      - ElementName: Play_Jump_Land
+        ObjectType: 3
+        guid: 8f0c614052d1074cbd833e5ab0284f36
+      Path: Events\Default Work Unit\Player\Jump\Play_Jump_Land
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: Play_Level1Track
+      guid: a1448fdae7bca54bae26146dd9a1ea37
+      id: 2111898282
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Music
+        ObjectType: 4
+        guid: 4a76246bec9a534cb0546c1b3c89e91a
+      - ElementName: Play_Level1Track
+        ObjectType: 3
+        guid: a1448fdae7bca54bae26146dd9a1ea37
+      Path: Events\Default Work Unit\Music\Play_Level1Track
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Player_Hurt_Voice
+      guid: 37d7082af033e144b14accb76c6f1afd
+      id: 2410481860
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Player
+        ObjectType: 4
+        guid: db9848f295cc764eb853f1b7c2e81432
+      - ElementName: Play_Player_Hurt_Voice
+        ObjectType: 3
+        guid: 37d7082af033e144b14accb76c6f1afd
+      Path: Events\Default Work Unit\Player\Play_Player_Hurt_Voice
+      maxAttenuation: 0
+      maxDuration: 0.5
+      minDuration: 0.5
+    - name: Play_Slime_Impacts
+      guid: ad25723a2a43c743a5fdb352ead0dcc6
+      id: 3770280562
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Slimes
+        ObjectType: 4
+        guid: 6dfbbb2c02ef124c9eca840ca2bdb689
+      - ElementName: Play_Slime_Impacts
+        ObjectType: 3
+        guid: ad25723a2a43c743a5fdb352ead0dcc6
+      Path: Events\Default Work Unit\Slimes\Play_Slime_Impacts
+      maxAttenuation: 0
+      maxDuration: 1
+      minDuration: 1
+    - name: Play_Slime_Run
+      guid: 7112c145e0ae79428910c88ff9d7ede3
+      id: 757323204
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Slimes
+        ObjectType: 4
+        guid: 6dfbbb2c02ef124c9eca840ca2bdb689
+      - ElementName: Slimes Movement
+        ObjectType: 4
+        guid: 2109849597dee24daa4749eb5aec908b
+      - ElementName: Play_Slime_Run
+        ObjectType: 3
+        guid: 7112c145e0ae79428910c88ff9d7ede3
+      Path: Events\Default Work Unit\Slimes\Slimes Movement\Play_Slime_Run
+      maxAttenuation: 50
+      maxDuration: 1
+      minDuration: 1
+    - name: Play_Slime_sucked
+      guid: 5e60f2997fd4184382b96aab7ea82e5e
+      id: 227719812
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Vacuum
+        ObjectType: 4
+        guid: 929f98c637ee814584efe47d76c8e266
+      - ElementName: Play_Slime_sucked
+        ObjectType: 3
+        guid: 5e60f2997fd4184382b96aab7ea82e5e
+      Path: Events\Default Work Unit\Vacuum\Play_Slime_sucked
+      maxAttenuation: 0
+      maxDuration: 1.5
+      minDuration: 1.5
+    - name: Play_Slime_Walk
+      guid: a207769d3bfde64198c3fa44d7c3afa6
+      id: 486688722
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Slimes
+        ObjectType: 4
+        guid: 6dfbbb2c02ef124c9eca840ca2bdb689
+      - ElementName: Slimes Movement
+        ObjectType: 4
+        guid: 2109849597dee24daa4749eb5aec908b
+      - ElementName: Play_Slime_Walk
+        ObjectType: 3
+        guid: a207769d3bfde64198c3fa44d7c3afa6
+      Path: Events\Default Work Unit\Slimes\Slimes Movement\Play_Slime_Walk
+      maxAttenuation: 50
+      maxDuration: 1.5
+      minDuration: 1.5
+    - name: Play_Vacuum
+      guid: fc1070343f13414ca8932eb562f47525
+      id: 4226331123
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Vacuum
+        ObjectType: 4
+        guid: 929f98c637ee814584efe47d76c8e266
+      - ElementName: Play_Vacuum
+        ObjectType: 3
+        guid: fc1070343f13414ca8932eb562f47525
+      Path: Events\Default Work Unit\Vacuum\Play_Vacuum
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player
+      guid: db9848f295cc764eb853f1b7c2e81432
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Player
+        ObjectType: 4
+        guid: db9848f295cc764eb853f1b7c2e81432
+      Path: Events\Default Work Unit\Player
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Slimes
+      guid: 6dfbbb2c02ef124c9eca840ca2bdb689
+      id: 1034004014
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Slimes
+        ObjectType: 4
+        guid: 6dfbbb2c02ef124c9eca840ca2bdb689
+      Path: Events\Default Work Unit\Slimes
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Slimes Movement
+      guid: 2109849597dee24daa4749eb5aec908b
+      id: 905510933
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Slimes
+        ObjectType: 4
+        guid: 6dfbbb2c02ef124c9eca840ca2bdb689
+      - ElementName: Slimes Movement
+        ObjectType: 4
+        guid: 2109849597dee24daa4749eb5aec908b
+      Path: Events\Default Work Unit\Slimes\Slimes Movement
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_Energy_Station_Charge
+      guid: fa908a9ed3287d44b870b5b995200f0f
+      id: 3955858708
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Energy Station
+        ObjectType: 4
+        guid: ea244af3a5bd8d4fb6353d23434dafcd
+      - ElementName: Stop_Energy_Station_Charge
+        ObjectType: 3
+        guid: fa908a9ed3287d44b870b5b995200f0f
+      Path: Events\Default Work Unit\Energy Station\Stop_Energy_Station_Charge
+      maxAttenuation: 0
+      maxDuration: 1
+      minDuration: 1
+    - name: Stop_Level1Track
+      guid: 337c3911c556f143a0a5ee86a6e18880
+      id: 3206947708
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Music
+        ObjectType: 4
+        guid: 4a76246bec9a534cb0546c1b3c89e91a
+      - ElementName: Stop_Level1Track
+        ObjectType: 3
+        guid: 337c3911c556f143a0a5ee86a6e18880
+      Path: Events\Default Work Unit\Music\Stop_Level1Track
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_Vacuum
+      guid: 659aa7d25462f54abc8521d65ad27bdf
+      id: 3044255001
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Vacuum
+        ObjectType: 4
+        guid: 929f98c637ee814584efe47d76c8e266
+      - ElementName: Stop_Vacuum
+        ObjectType: 3
+        guid: 659aa7d25462f54abc8521d65ad27bdf
+      Path: Events\Default Work Unit\Vacuum\Stop_Vacuum
+      maxAttenuation: 0
+      maxDuration: 2
+      minDuration: 2
+    - name: Vacuum
+      guid: 929f98c637ee814584efe47d76c8e266
+      id: 3699816212
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: f570bc748b501142bd41a5fead724b86
+      - ElementName: Vacuum
+        ObjectType: 4
+        guid: 929f98c637ee814584efe47d76c8e266
+      Path: Events\Default Work Unit\Vacuum
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -139,7 +712,7 @@ MonoBehaviour:
     m_lastTime: -8585460367876258954
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 010000000500000006000000070000000b0000000c000000ee000000ef000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

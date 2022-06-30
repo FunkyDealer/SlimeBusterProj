@@ -1,0 +1,57 @@
+Event	ID	Name			Wwise Object Path	Notes
+	227719812	Play_Slime_sucked			\Default Work Unit\Vacuum\Play_Slime_sucked	
+	472891535	Play_Energy_Regen_PickUp			\Default Work Unit\Play_Energy_Regen_PickUp	
+	486688722	Play_Slime_Walk			\Default Work Unit\Slimes\Slimes Movement\Play_Slime_Walk	
+	608236531	Play_HealthUp			\Default Work Unit\Play_HealthUp	
+	757323204	Play_Slime_Run			\Default Work Unit\Slimes\Slimes Movement\Play_Slime_Run	
+	2111898282	Play_Level1Track			\Default Work Unit\Music\Play_Level1Track	
+	2121812230	Play_FragmentPickUp			\Default Work Unit\Play_FragmentPickUp	
+	2410481860	Play_Player_Hurt_Voice			\Default Work Unit\Player\Play_Player_Hurt_Voice	
+	2856985320	Play_HealthPickUp			\Default Work Unit\Play_HealthPickUp	
+	3044255001	Stop_Vacuum			\Default Work Unit\Vacuum\Stop_Vacuum	
+	3206947708	Stop_Level1Track			\Default Work Unit\Music\Stop_Level1Track	
+	3297008698	Play_Jump_Land			\Default Work Unit\Player\Jump\Play_Jump_Land	
+	3394678998	Play_Energy_Station_backGround			\Default Work Unit\Energy Station\Play_Energy_Station_backGround	
+	3689126666	Play_Jump			\Default Work Unit\Player\Jump\Play_Jump	
+	3770280562	Play_Slime_Impacts			\Default Work Unit\Slimes\Play_Slime_Impacts	
+	3854155799	Play_FootSteps			\Default Work Unit\Player\Play_FootSteps	
+	3955858708	Stop_Energy_Station_Charge			\Default Work Unit\Energy Station\Stop_Energy_Station_Charge	
+	4219374422	Play_Energy_Station_Charge			\Default Work Unit\Energy Station\Play_Energy_Station_Charge	
+	4226331123	Play_Vacuum			\Default Work Unit\Vacuum\Play_Vacuum	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	16830251	Player Hurt 3	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Player Hurt 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hurt Voice\Player Hurt 3		88264
+	28413886	Vacuum Cleaner Loop	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Vacuum Cleaner Loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Vacuum\Vacuum Start\Vacuum Cleaner Loop		970264
+	30408524	Vacuum Cleaner End	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Vacuum Cleaner End_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Vacuum\Vacuum Cleaner End		352864
+	48127726	Jump	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Jump_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\Jump		88264
+	49373084	Player Hurt 1	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Player Hurt 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hurt Voice\Player Hurt 1		88264
+	61798196	FootSteps2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\FootSteps2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps2		42640
+	99981450	HealthPickUp	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\HealthPickUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUps\Health\HealthPickUp		211744
+	107296982	FootSteps5	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\FootSteps5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps5		41844
+	191231930	Slimes Walk 3	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Slimes Walk 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 3		264664
+	193951008	Slimes Run 1	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Slimes Run 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Run\Slimes Run 1		176464
+	205295464	Slimes Walk 1	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Slimes Walk 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 1		264664
+	342022084	Energy Regen PickUp	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Energy Regen PickUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUps\Energy Regen PickUp		356392
+	351176319	Energy Regen Station Loop	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Energy Regen Station Loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Energy Regen Station\Energy Station Start\Energy Regen Station Loop		882064
+	356702646	Slimes Walk 2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Slimes Walk 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 2		264664
+	483229021	player Impact Sound 2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\player Impact Sound 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Impacts\player Impact Sound 2		176464
+	525589957	Slime sucked Sound	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Slime sucked Sound_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slime sucked Sound		264664
+	535244137	Energy Station Regen backGround Loop	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Energy Station Regen backGround Loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Energy Regen Station\Energy Station Regen backGround Loop		6350464
+	659249513	Vacuum Cleaner Start	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Vacuum Cleaner Start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Vacuum\Vacuum Start\Vacuum Cleaner Start		176464
+	662180827	player Impact Sound 4	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\player Impact Sound 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Impacts\player Impact Sound 4		176464
+	705700893	Slimes Walk 4	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Slimes Walk 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 4		264664
+	728881695	HealthUp	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\HealthUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUps\Health\HealthUp		102804
+	730702024	FootSteps3	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\FootSteps3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps3		41628
+	785823841	Slimes Run 2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Slimes Run 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Run\Slimes Run 2		176464
+	791527688	Jump Land	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Jump Land_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\Jump Land		88264
+	808712315	player Impact Sound 3	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\player Impact Sound 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Impacts\player Impact Sound 3		176464
+	825306661	FragmentPickUp	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\FragmentPickUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUps\Health\FragmentPickUp		62896
+	854601314	Energy Regen Station Start	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Energy Regen Station Start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Energy Regen Station\Energy Station Start\Energy Regen Station Start		264664
+	869163709	Energy Regen Station End	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Energy Regen Station End_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Energy Regen Station\Energy Regen Station End		176464
+	907317892	Level1Track	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Level1Track_D79FB2B7.wem		\Actor-Mixer Hierarchy\Music\Level1Track		40307464
+	908126126	player Impact Sound 1	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\player Impact Sound 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Impacts\player Impact Sound 1		176464
+	975545179	Player Hurt 4	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Player Hurt 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hurt Voice\Player Hurt 4		88264
+	989725161	FootSteps1	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\FootSteps1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps1		40960
+	1067120340	FootSteps4	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\FootSteps4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps4		41508
+	1070837762	Player Hurt 2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Windows\SFX\Player Hurt 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hurt Voice\Player Hurt 2		88264
+

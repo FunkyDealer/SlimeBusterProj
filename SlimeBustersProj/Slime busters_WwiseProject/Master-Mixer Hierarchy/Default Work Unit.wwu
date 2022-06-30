@@ -9,6 +9,33 @@
 							<ObjectRef Name="System" ID="{55785AD0-3B57-4D2F-A3B5-54A553BF0919}" WorkUnitID="{7FD9F4DF-81DC-4031-9E87-912C1BB1D61E}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Music" ID="{5BC2A2C0-692B-4D40-BFEF-DDEE42B8CC16}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ObjectLists/>
+						</Bus>
+						<Bus Name="Effects" ID="{CD47A877-4DDF-4572-A8E4-3B86AD2FBE59}">
+							<ChildrenList>
+								<Bus Name="Vacuum" ID="{2BB1B120-6265-481D-A226-0EC0A284AAB4}">
+									<PropertyList>
+										<Property Name="BusVolume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ObjectLists/>
+								</Bus>
+							</ChildrenList>
+							<ObjectLists/>
+						</Bus>
+					</ChildrenList>
 					<ObjectLists/>
 				</Bus>
 			</ChildrenList>

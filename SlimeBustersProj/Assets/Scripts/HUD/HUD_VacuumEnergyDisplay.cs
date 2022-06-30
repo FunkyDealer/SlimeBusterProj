@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD_VacuumEnergyDisplay : MonoBehaviour
 {
+    private Slider slider;
 
-    [SerializeField]
-    private TMP_Text EnergyDisplayText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        slider = GetComponentInChildren<Slider>();
     }
 
     // Update is called once per frame
@@ -21,8 +21,12 @@ public class HUD_VacuumEnergyDisplay : MonoBehaviour
         
     }
 
-    public void UpdateEnergyDisplay(int currentEnergy)
+    public void UpdateEnergyDisplay(int currentEnergy, int maxEnergy)
     {
-        EnergyDisplayText.text = $"Energy: {currentEnergy}";
+        float sliderValue;
+        sliderValue = (currentEnergy * 100) / maxEnergy;
+
+        sliderValue = sliderValue * 0.01f;
+        slider.value = sliderValue;
     }
 }

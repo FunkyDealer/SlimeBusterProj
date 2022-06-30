@@ -36,7 +36,7 @@ public class Slime : MonoBehaviour, IVacuumable
     protected bool playerInFarRange; //is the player in far range of the slime's far radar?
 
     [SerializeField]
-    protected GameObject healthFragPrefab;
+    protected List<GameObject> healthFragsPrefabs;
 
     protected NavMeshAgent meshAgent;
     protected AI_WayPoint currentWayPoint = null;
@@ -107,8 +107,6 @@ public class Slime : MonoBehaviour, IVacuumable
     {
         if (!beingVacuumed) ReplaceBones();
 
-
-
     }
 
     protected virtual void FixedUpdate()
@@ -116,15 +114,29 @@ public class Slime : MonoBehaviour, IVacuumable
         if (beingVacuumed) beingVacuumed = false;
 
 
-        //myRigidbody.velocity += vacuumForce * Time.deltaTime;
-        transform.position += vacuumForce * Time.deltaTime;
 
+        
+
+        VacuumSlimeToCleaner();
+
+    }
+
+    protected virtual void LateUpdate()
+    {
+        if (alive)
+        {         //myRigidbody.velocity += vacuumForce * Time.deltaTime;
+                  //myRigidbody.AddForce(vacuumForce * 500 * Time.deltaTime, ForceMode.Force);
+            transform.position += vacuumForce * Time.deltaTime;
+        }
 
         vacuumForce = Vector3.zero;
+    }
 
+    private void VacuumSlimeToCleaner()
+    {
         if (!alive && dying)
         {
-            transform.position = Vector3.Slerp(transform.position, vacuumPoint.position, Time.deltaTime * vacuumSpeed);
+            transform.position = Vector3.Lerp(transform.position, vacuumPoint.position, Time.deltaTime * vacuumSpeed);
 
             //newscale = (maxScale * distance) / maxDistance
             float distance = Vector3.Distance(vacuumPoint.position, transform.position);
@@ -141,30 +153,28 @@ public class Slime : MonoBehaviour, IVacuumable
                 if (!beingRemoved) RemoveSlime();
             }
         }
-
     }
 
-    public virtual void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce)
+    public virtual void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce, float multiplier)
     {
-        beingVacuumed = true;
-        if (health > 0) health = health - vacuumRate * Time.deltaTime;
-
-        else
-        {
-            if (alive) Die(point);
-        }
-
         if (alive)
         {
-            //BoneStretch(point);
+            beingVacuumed = true;
+            if (health > 0) health = health - vacuumRate * Time.deltaTime;
+            else
+            {
+               Die(point);
+            }
+                BoneStretch(point);
 
-            Vector3 direction = new Vector3(point.position.x, transform.position.y, point.position.z) - transform.position;
-            direction.Normalize();
+                Vector3 direction = new Vector3(point.position.x, transform.position.y, point.position.z) - transform.position;
+                direction.Normalize();
 
-            //power = (maxPower-minPower) * DistanceToPoint + minPower
-            float power = (maxVacuumForce - minVacuumForce) * (Vector3.Distance(new Vector3(point.position.x, transform.position.y, point.position.z), transform.position)) + minVacuumForce;
+                //power = (maxPower-minPower) * DistanceToPoint + minPower
+                float power = (maxVacuumForce - minVacuumForce) * (Vector3.Distance(new Vector3(point.position.x, transform.position.y, point.position.z), transform.position)) + minVacuumForce;
 
-            vacuumForce = direction * power;
+                vacuumForce = direction * power * multiplier;
+            
         }
     }
 
@@ -243,13 +253,22 @@ public class Slime : MonoBehaviour, IVacuumable
     {
         alive = false;
         dying = true;
+
         myRigidbody.useGravity = false;
+        myRigidbody.isKinematic = true;
+        myRigidbody.detectCollisions = false;
+
         meshAgent.enabled = false;
+
         vacuumPoint = vacuumPos;
         Vector3 dir = vacuumPos.position - transform.position;
         maxDistanceWhenDying = Vector3.Distance(vacuumPos.position, transform.position);
         dir.Normalize();
         vacuumForce = Vector3.zero;
+
+        
+
+        transform.parent = vacuumPos;
 
 
         SlimeManager.inst.RemoveSlime(this);
@@ -257,6 +276,8 @@ public class Slime : MonoBehaviour, IVacuumable
 
     protected virtual void RemoveSlime()
     {
+        transform.parent = null;
+        AkSoundEngine.PostEvent("Play_Slime_sucked", gameObject);
         spawnHealthFrag();
         skin.enabled = false;
         transform.position = new Vector3(999, 999, 999);
@@ -306,9 +327,11 @@ public class Slime : MonoBehaviour, IVacuumable
 
     protected void spawnHealthFrag()
     {
-        if (UnityEngine.Random.value < 0.2)
+        if (UnityEngine.Random.value < 0.35)
         {
-            GameObject o = Instantiate(healthFragPrefab, transform.position, Quaternion.identity);
+            GameObject p = healthFragsPrefabs[UnityEngine.Random.Range(0, healthFragsPrefabs.Count)];
+
+            GameObject o = Instantiate(p, transform.position, Quaternion.identity);
 
         }
     }

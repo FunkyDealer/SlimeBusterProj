@@ -18,6 +18,8 @@ public class BlueSlime : Slime, IVacuumable
     AIWanderBehaviour wanderBehaviour; //AI wander behaviour
     AIMoveBehaviour moveBehaviour;
 
+    float SoundWaitTime = 2.5f;
+
     protected override void Awake()
     {
         base.Awake();
@@ -52,8 +54,8 @@ public class BlueSlime : Slime, IVacuumable
     {
         base.Update();
 
-        if (meshAgent.speed == runSpeed && currentStamina > 0) currentStamina -= staminaDrainRate * Time.deltaTime;
-        else if (meshAgent.speed != runSpeed && currentStamina < 100) currentStamina += staminaGainRate * Time.deltaTime;
+        if (alive && meshAgent.speed == runSpeed && currentStamina > 0) currentStamina -= staminaDrainRate * Time.deltaTime;
+        else if (alive && meshAgent.speed != runSpeed && currentStamina < 100) currentStamina += staminaGainRate * Time.deltaTime;
     }
 
     protected override void FixedUpdate()
@@ -65,8 +67,14 @@ public class BlueSlime : Slime, IVacuumable
 
         SetAnimator();
 
-        if (meshAgent.speed == runSpeed && currentStamina <= 0) meshAgent.speed = basicSpeed;
+        if (alive && meshAgent.speed == runSpeed && currentStamina <= 0) meshAgent.speed = basicSpeed;
         
+    }
+
+    protected override void LateUpdate()
+    {
+        base.LateUpdate();
+
     }
 
     private void SetAnimator()
@@ -100,11 +108,13 @@ public class BlueSlime : Slime, IVacuumable
 
         InitiateWandering();
 
+        StartCoroutine(PlayMoveSound());
+
         StartCoroutine(RunAI());
     }
-    public override void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce)
+    public override void GetVacuumed(Transform point, float maxVacuumForce, float minVacuumForce, float multiplier)
     {
-        base.GetVacuumed(point, maxVacuumForce, minVacuumForce);
+        base.GetVacuumed(point, maxVacuumForce, minVacuumForce, multiplier);
 
 
     }
@@ -202,8 +212,38 @@ public class BlueSlime : Slime, IVacuumable
 
         yield return new WaitForSeconds(AITickTime); //the AI only run at every x seconds (default 1) //navmesh still works in real time
 
-        StartCoroutine(RunAI());
+       if (alive) StartCoroutine(RunAI());
 
+    }
+
+    private IEnumerator PlayMoveSound()
+    {
+        yield return new WaitForSeconds(SoundWaitTime);
+
+        switch (currentAIState)
+        {
+            case S_State.Idle:
+                //nothing
+                break;
+            case S_State.Wandering:
+                //walk
+                AkSoundEngine.PostEvent("Play_Slime_Walk", gameObject);
+                SoundWaitTime = 1.5f;
+                break;
+            case S_State.Running:
+                //run Sound
+                AkSoundEngine.PostEvent("Play_Slime_Run", gameObject);
+                SoundWaitTime = 1f;
+                break;
+            case S_State.Moving:
+                AkSoundEngine.PostEvent("Play_Slime_Walk", gameObject);
+                SoundWaitTime = 1.5f;
+                break;
+            default:
+                break;
+        }
+
+        StartCoroutine(PlayMoveSound());
     }
 
     private void DebugShowDestination()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -117,7 +118,11 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = CheckIsGround();
-        if (isGrounded) jumping = false;
+        if (isGrounded)
+        {
+           // if (jumping) AkSoundEngine.PostEvent(3297008698, gameObject); //Play_Jump_Land event
+            jumping = false;
+        }
 
         if (!beingLaunched)
         { 
@@ -131,6 +136,7 @@ public class Player : MonoBehaviour
 
             if (jump) {
                 myRigidbody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+                AkSoundEngine.PostEvent("Play_Jump", gameObject);
                 jump = false;
                 jumping = true;
             }
@@ -205,6 +211,9 @@ public class Player : MonoBehaviour
     {
         if (canBeDamaged)
         {
+            AkSoundEngine.PostEvent("Play_Slime_Impacts", gameObject);
+            StartCoroutine(PlayPlayerHurtSound());
+
             canBeDamaged = false;
             currenthealth -= damage;
             healthDisplay.UpdateHealthDisplay(currenthealth);
@@ -225,6 +234,12 @@ public class Player : MonoBehaviour
         myRigidbody.AddForce(launchDirection * 10, ForceMode.VelocityChange);
         beingLaunched = true;
         StartCoroutine(RegainMotion());
+    }
+
+    private IEnumerator PlayPlayerHurtSound()
+    {
+        yield return new WaitForSeconds(0.2f);
+        AkSoundEngine.PostEvent("Play_Player_Hurt_Voice", gameObject);
     }
 
     private IEnumerator RegainVulnerability()
@@ -254,10 +269,18 @@ public class Player : MonoBehaviour
         remainingSlimesDisplay.UpdateSlimesDisplay(n);
     }
 
-    public void AddHealth(int ammount)
+    public void AddHealthCommand(int ammount)
     {
+        StartCoroutine(AddHealth(ammount));
+    }
+
+    private IEnumerator AddHealth(int ammount)
+    {
+        yield return new WaitForSeconds(1f);
+
         currenthealth += ammount;
         healthDisplay.UpdateHealthDisplay(currenthealth);
+        AkSoundEngine.PostEvent("Play_HealthUp", gameObject);
     }
 
     public void AddHealthFragment(int ammount)
@@ -267,7 +290,7 @@ public class Player : MonoBehaviour
         if (currentHealthFragments >= neededHealthFragments)
         {
             currentHealthFragments -= neededHealthFragments;
-            AddHealth(1);
+            StartCoroutine(AddHealth(1));
         }
 
         fragmentDisplay.UpdateFragDisplay(currentHealthFragments);

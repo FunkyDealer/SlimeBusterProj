@@ -14,6 +14,14 @@ public class HealthPickUp : MonoBehaviour
     void Update()
     {
         
+       
+
+
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Rotate(transform.up, 1f);
     }
 
 
@@ -21,7 +29,9 @@ public class HealthPickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<Player>().AddHealth(1);
+            other.GetComponent<Player>().AddHealthCommand(1);
+
+            AkSoundEngine.PostEvent("Play_HealthPickUp", gameObject);
             Destroy(this.gameObject);
         }
     }

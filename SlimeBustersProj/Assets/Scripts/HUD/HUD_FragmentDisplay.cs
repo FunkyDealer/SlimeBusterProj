@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUD_FragmentDisplay : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text FragmentDisplayText;
+    List<Image> heartFrags = new List<Image>();
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +25,24 @@ public class HUD_FragmentDisplay : MonoBehaviour
 
     public void UpdateFragDisplay(int currentFrag)
     {
-        FragmentDisplayText.text = $"Frags: {currentFrag}";
+        DisableFrags();
+
+        if (currentFrag > 0)
+        {
+            for (int i = 0; i < currentFrag; i++)
+            {
+                heartFrags[i].enabled = true;
+            }
+        }
+
+        
+    }
+
+    void DisableFrags()
+    {
+        foreach (var h in heartFrags)
+        {
+            h.enabled = false;
+        }
     }
 }
