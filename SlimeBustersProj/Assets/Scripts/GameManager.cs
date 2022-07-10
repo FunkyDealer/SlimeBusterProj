@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private string nextScene = "Main Menu";
     [SerializeField]
-    private float changeLevelTime = 3;
+    private float changeLevelTime = 2;
 
     private void Awake()
     {

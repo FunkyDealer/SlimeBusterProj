@@ -12,6 +12,8 @@ public class SlimeManager : MonoBehaviour
     public int RemainingSlimesToSpawn { private set; get; } //ammount of slimes left for the spawners to spawn
 
     private int remainingSlimesToCapture; //current number of slimes left for player to capture (includes unspawned ones)
+    private int totalSlimesAtStart;
+    private bool halfWayPassed;
 
     [SerializeField]
     int firstWave = 4; //The first wave of slimes that will spawn on the spawners when the game beggins
@@ -52,6 +54,8 @@ public class SlimeManager : MonoBehaviour
 
         RemainingSlimesToSpawn = prefabSlimeList.Count; //remaining slimes to spawn is the ammount put in the list, the preplaced slimes are also added by themselfs
         remainingSlimesToCapture = RemainingSlimesToSpawn;
+        totalSlimesAtStart = remainingSlimesToCapture;
+        halfWayPassed = false;
 
     }
 
@@ -119,7 +123,12 @@ public class SlimeManager : MonoBehaviour
         remainingSlimesToCapture--;
         player.GetRemainingSlimes(remainingSlimesToCapture);
 
-        if (remainingSlimesToCapture <= 0) GameManager.inst.endLevel();
+        if (!halfWayPassed && remainingSlimesToCapture <= totalSlimesAtStart / 2)
+        {
+            halfWayPassed = true;
+            StartCoroutine(DialogManager.inst.HalfWayDialog());
+        }
+        if (remainingSlimesToCapture <= 0) StartCoroutine(DialogManager.inst.EndDialog());
     }
 
     public GameObject getNextSlime() //get next slime to spawn in the prefab slime list
@@ -130,7 +139,6 @@ public class SlimeManager : MonoBehaviour
         return slime;
 
     }
-
 
     public AI_WayPoint GetFurthestWayPoint(Vector3 position) //get the furthest away waypoint from the position
     {

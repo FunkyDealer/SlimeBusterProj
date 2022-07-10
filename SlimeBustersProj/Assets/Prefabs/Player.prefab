@@ -438,7 +438,9 @@ GameObject:
   - component: {fileID: 1816436456329150030}
   - component: {fileID: 1816436456329150026}
   - component: {fileID: 6788993905996599259}
-  m_Layer: 0
+  - component: {fileID: 4817627153106506860}
+  - component: {fileID: 9110450109802979616}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -580,6 +582,42 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816436456329150033}
   m_Enabled: 1
+--- !u!114 &4817627153106506860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816436456329150033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463cd1a4c5ad159448607c8ed12d7eab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &9110450109802979616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816436456329150033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93684ee079284cc4f933f3cdb57c6e95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
 --- !u!1 &1816436456391350826
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +629,7 @@ GameObject:
   - component: {fileID: 1816436456391350827}
   - component: {fileID: 1816436456391350824}
   - component: {fileID: 1816436456391350825}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Vacuum Shooter Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1837,6 +1875,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vacuum Particles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2182366285984017053, guid: d529e07fc5685b04896513d1a3b91e9c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2182366285984017053, guid: d529e07fc5685b04896513d1a3b91e9c,
         type: 3}

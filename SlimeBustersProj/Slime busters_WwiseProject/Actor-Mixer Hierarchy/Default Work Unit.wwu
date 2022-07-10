@@ -205,6 +205,7 @@
 									</ValueList>
 								</Property>
 								<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="9"/>
+								<Property Name="VirtualVoiceQueueBehavior" Type="int16" Value="2"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -214,7 +215,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
 								</Reference>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Effects" ID="{CD47A877-4DDF-4572-A8E4-3B86AD2FBE59}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+									<ObjectRef Name="Station BackGroundLoop" ID="{E7C86D11-A0C7-425E-91A0-7689FD79B76B}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -226,6 +227,9 @@
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
+							<PositioningInfo>
+								<Position Name="" ID="{9B52C749-A08F-411E-A7BC-8FBB613850D0}"/>
+							</PositioningInfo>
 							<ObjectLists/>
 							<ActiveSourceList>
 								<ActiveSource Name="Energy Station Regen backGround Loop" ID="{669E5842-47EA-4BF2-9601-5A149C647772}" Platform="Linked"/>
@@ -723,6 +727,11 @@
 						<RandomSequenceContainer Name="Run" ID="{98D896F6-D64B-4CF1-B58F-5F0C48731F35}" ShortID="646428290">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="OutputBusVolume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">
@@ -788,6 +797,11 @@
 						<RandomSequenceContainer Name="Walk" ID="{20A556CC-7C0C-49F5-9065-C9793A42C149}" ShortID="800015950">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="OutputBusVolume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Attenuation">

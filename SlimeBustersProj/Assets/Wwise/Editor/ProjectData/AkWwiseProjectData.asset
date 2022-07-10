@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d9de71236655af43bfa71ff02c16f7f6
     GuidInternal: 
-    m_lastTime: -8585454195796281709
+    m_lastTime: -8585443172902104198
     List:
     - name: Effects
       guid: 77a847cddf4d7245a8e43b86ad2fbe59
@@ -88,6 +88,27 @@ MonoBehaviour:
         ObjectType: 2
         guid: c0a2c25b2b69404dbfefddee42b8cc16
       Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music
+    - name: Station BackGroundLoop
+      guid: 116dc8e7c7a05e4291a07689fd79b76b
+      id: 2401774483
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: d9de71236655af43bfa71ff02c16f7f6
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      - ElementName: Effects
+        ObjectType: 2
+        guid: 77a847cddf4d7245a8e43b86ad2fbe59
+      - ElementName: Station BackGroundLoop
+        ObjectType: 2
+        guid: 116dc8e7c7a05e4291a07689fd79b76b
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Effects\Station
+        BackGroundLoop
     - name: Vacuum
       guid: 20b1b12b65621d48a2260ec0a284aab4
       id: 3699816212
@@ -712,7 +733,7 @@ MonoBehaviour:
     m_lastTime: -8585460367876258954
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 010000000500000006000000070000000b0000000c000000ee000000ef000000
+  ExpandedWaapiItemIds: 0100000005000000060000000b0000000c000000ee000000ef000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

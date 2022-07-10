@@ -18,8 +18,7 @@ public class CameraController : MonoBehaviour
 
     Dictionary<int, List<Material[]>> savedMats;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         savedMats = new Dictionary<int, List<Material[]>>();
 
@@ -30,12 +29,17 @@ public class CameraController : MonoBehaviour
         offset = transform.position - target.position;
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+       
+    }
+
     // Update is called once per frame
     void Update()
     {
         
     }
-
 
     private void FixedUpdate()
     {

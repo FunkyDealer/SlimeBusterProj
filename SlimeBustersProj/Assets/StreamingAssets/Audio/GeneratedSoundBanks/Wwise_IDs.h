@@ -45,6 +45,7 @@ namespace AK
         static const AkUniqueID EFFECTS = 1942696649U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID STATION_BACKGROUNDLOOP = 2401774483U;
         static const AkUniqueID VACUUM = 3699816212U;
     } // namespace BUSSES
 

@@ -23,12 +23,15 @@ public class Player : MonoBehaviour
 
     private Vector3 direction;
     private Rigidbody myRigidbody;
+    private Collider myCollider;
+    private AkAudioListener myAudioListener;
 
     private Vector2 movementInput;
     private Vector2 lookInput;
     private bool jump;
     private bool interact;
     private bool attack;
+    private bool frozen = false;
 
     [SerializeField]
     private LayerMask mousePointLayerMask;
@@ -70,14 +73,20 @@ public class Player : MonoBehaviour
     {
         currenthealth = defaultHealth;
         canBeDamaged = true;
+
+        myRigidbody = GetComponent<Rigidbody>();
+        myCollider = GetComponent<Collider>();
+        myAudioListener = GetComponent<AkAudioListener>();
+        distanceGround = myCollider.bounds.extents.y;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        myRigidbody = GetComponent<Rigidbody>();
+        
 
-        distanceGround = GetComponent<Collider>().bounds.extents.y;
+        
 
         healthDisplay.UpdateHealthDisplay(currenthealth);
         fragmentDisplay.UpdateFragDisplay(currentHealthFragments);
@@ -88,30 +97,33 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isAlive)
+        if (!frozen)
         {
-            movementInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-            lookInput = new Vector2(Input.GetAxis("Right Horizontal"), Input.GetAxis("Right Vertical"));
+            if (isAlive)
+            {
+                movementInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+                lookInput = new Vector2(Input.GetAxis("Right Horizontal"), Input.GetAxis("Right Vertical"));
 
-            if (!jump && !jumping && isGrounded)
-            {
-                jump = Input.GetButtonDown("Jump");
-            }
-            if (!attack)
-            {
-                attack = Input.GetButton("Fire1");
-                if (lookInput.magnitude > 0.1f) attack = true;
-            }
-            if (!interact)
-            {
-                interact = Input.GetButtonDown("Interact");
-            }
+                if (!jump && !jumping && isGrounded)
+                {
+                    jump = Input.GetButtonDown("Jump");
+                }
+                if (!attack)
+                {
+                    attack = Input.GetButton("Fire1");
+                    if (lookInput.magnitude > 0.1f) attack = true;
+                }
+                if (!interact)
+                {
+                    interact = Input.GetButtonDown("Interact");
+                }
 
-        }
-        else
-        {
-            ResetInput();
-            direction = new Vector3(0, direction.y, 0);
+            }
+            else
+            {
+                ResetInput();
+                direction = new Vector3(0, direction.y, 0);
+            }
         }
     }
 
@@ -294,5 +306,21 @@ public class Player : MonoBehaviour
         }
 
         fragmentDisplay.UpdateFragDisplay(currentHealthFragments);
+    }
+
+    public void Freeze()
+    {
+        frozen = true;
+        myCollider.enabled = false;
+        myRigidbody.isKinematic = true;
+        myAudioListener.enabled = false;
+    }
+
+    public void Unfreeze()
+    {
+        frozen = false;
+        myCollider.enabled = true;
+        myRigidbody.isKinematic = false;
+        myAudioListener.enabled = true;
     }
 }

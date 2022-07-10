@@ -32,6 +32,15 @@
 									</PropertyList>
 									<ObjectLists/>
 								</Bus>
+								<Bus Name="Station BackGroundLoop" ID="{E7C86D11-A0C7-425E-91A0-7689FD79B76B}">
+									<PropertyList>
+										<Property Name="MaxDuckVolume" Type="Real64" Value="-34"/>
+									</PropertyList>
+									<PositioningInfo>
+										<Panner Name="" ID="{07A97EAC-41FC-4376-A599-9D39AFFDA5A6}"/>
+									</PositioningInfo>
+									<ObjectLists/>
+								</Bus>
 							</ChildrenList>
 							<ObjectLists/>
 						</Bus>
