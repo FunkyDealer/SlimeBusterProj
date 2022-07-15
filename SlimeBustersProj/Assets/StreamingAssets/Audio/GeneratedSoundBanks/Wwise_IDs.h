@@ -13,11 +13,13 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_BOY_VOICE = 3480547451U;
         static const AkUniqueID PLAY_ENERGY_REGEN_PICKUP = 472891535U;
         static const AkUniqueID PLAY_ENERGY_STATION_BACKGROUND = 3394678998U;
         static const AkUniqueID PLAY_ENERGY_STATION_CHARGE = 4219374422U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_FRAGMENTPICKUP = 2121812230U;
+        static const AkUniqueID PLAY_GIRL_VOICE = 3245116771U;
         static const AkUniqueID PLAY_HEALTHPICKUP = 2856985320U;
         static const AkUniqueID PLAY_HEALTHUP = 608236531U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
@@ -47,6 +49,7 @@ namespace AK
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID STATION_BACKGROUNDLOOP = 2401774483U;
         static const AkUniqueID VACUUM = 3699816212U;
+        static const AkUniqueID VOICE = 3170124113U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES

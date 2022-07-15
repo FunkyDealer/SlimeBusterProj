@@ -23,6 +23,7 @@ public class DialogManager : MonoBehaviour
     Animator myAnimator;
 
     bool dialogPlaying;
+    bool AllowVoice = true;
 
     private void Awake()
     {
@@ -38,9 +39,7 @@ public class DialogManager : MonoBehaviour
         myAnimator = GetComponent<Animator>();
         dialogPlaying = false;
 
-        StartCoroutine(FirstDialog());
-
-       
+        StartCoroutine(FirstDialog());       
 
     }
 
@@ -79,6 +78,7 @@ public class DialogManager : MonoBehaviour
         {
             currentText = currentText + currentLine.Line[currentText.Length];
             dialogText.text = currentText;
+            PlayVoice(currentLine.Character);
 
             yield return new WaitForSeconds(timeBetweenLetters);
             StartCoroutine(PlayLine(currentLine, currentText));
@@ -88,8 +88,6 @@ public class DialogManager : MonoBehaviour
             
             StartCoroutine(LoadNextLine(timeBetweenLines));
         }
-
-
     }
 
     private IEnumerator LoadNextLine(float timeToWait)
@@ -104,6 +102,7 @@ public class DialogManager : MonoBehaviour
 
             string currentText = currentLine.Line[0].ToString();
             dialogText.text = currentText;
+            PlayVoice(currentLine.Character);
             yield return new WaitForSeconds(timeBetweenLetters);
 
             currentLineNr++;            
@@ -119,6 +118,37 @@ public class DialogManager : MonoBehaviour
 
             CloseTextBox();
         }        
+    }
+
+    private void PlayVoice(PortraitSystem.Character character)
+    {
+        if (AllowVoice)
+        {
+            switch (character)
+            {
+                case PortraitSystem.Character.MALE:
+                    AkSoundEngine.PostEvent("Play_Boy_Voice", gameObject);
+                    StartCoroutine(ReAllowVoice(0.1f));
+                    break;
+                case PortraitSystem.Character.FEMALE:
+                    AkSoundEngine.PostEvent("Play_Girl_Voice", gameObject);
+                    StartCoroutine(ReAllowVoice(0.1f));
+                    break;
+                case PortraitSystem.Character.NONE:
+                    //play no voice
+                    break;
+                default:
+                    break;
+            }
+
+            AllowVoice = false;
+            
+        }
+    }
+    IEnumerator ReAllowVoice(float time)
+    {
+        yield return new WaitForSeconds(time);
+        AllowVoice = true;
     }
 
     private void OpenTextBox()

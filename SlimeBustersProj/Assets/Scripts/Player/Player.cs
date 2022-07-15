@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
 {
     [SerializeField]
     private GameObject myCamera;
+    [SerializeField]
+    GameObject FreeCamera;
 
     [Header("Movement")]
     [SerializeField]
@@ -25,9 +27,11 @@ public class Player : MonoBehaviour
     private Rigidbody myRigidbody;
     private Collider myCollider;
     private AkAudioListener myAudioListener;
+    private Animator myAnimator;
 
-    private Vector2 movementInput;
-    private Vector2 lookInput;
+    private Vector2 movementInput = Vector2.zero;
+    private Vector2 lookInput = Vector2.zero;
+    private Vector3 lookDir = Vector3.zero;
     private bool jump;
     private bool interact;
     private bool attack;
@@ -77,6 +81,7 @@ public class Player : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         myCollider = GetComponent<Collider>();
         myAudioListener = GetComponent<AkAudioListener>();
+        myAnimator = GetComponent<Animator>();
         distanceGround = myCollider.bounds.extents.y;
 
     }
@@ -84,9 +89,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-
-        
+               
 
         healthDisplay.UpdateHealthDisplay(currenthealth);
         fragmentDisplay.UpdateFragDisplay(currentHealthFragments);
@@ -117,6 +120,12 @@ public class Player : MonoBehaviour
                 {
                     interact = Input.GetButtonDown("Interact");
                 }
+                if (Input.GetKey(KeyCode.P))
+                {
+                    this.gameObject.SetActive(false);
+                    myCamera.gameObject.SetActive(false);
+                    FreeCamera.gameObject.SetActive(true);
+                }
 
             }
             else
@@ -125,6 +134,12 @@ public class Player : MonoBehaviour
                 direction = new Vector3(0, direction.y, 0);
             }
         }
+    }
+
+    internal void returnToPlayer()
+    {
+        this.gameObject.SetActive(true);
+        myCamera.gameObject.SetActive(true);
     }
 
     private void FixedUpdate()
@@ -156,24 +171,23 @@ public class Player : MonoBehaviour
         if (!attack)
         {
             //make player look where they go        
-            Vector3 lookDir = new Vector3(direction.x, 0, direction.z);
+            lookDir = new Vector3(direction.x, 0, direction.z);
             if (lookDir != Vector3.zero)
             {
                 Quaternion rotation = Quaternion.LookRotation(lookDir, transform.up);
                 transform.rotation = rotation;
             }
 
-
             if (cleaner.Active) cleaner.Deactivate();
         }
         else
         {
             //make player look at point where mouse is clicking
-            Vector3 lookDir = Vector3.zero;
+            lookDir = Vector3.zero;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit raycastHit, 500, mousePointLayerMask, QueryTriggerInteraction.Ignore))
             {
-                lookDir = raycastHit.point - transform.position;
+                lookDir = raycastHit.point - transform.position;                  
             }
 
             lookDir = new Vector3(lookDir.x, 0, lookDir.z);
@@ -193,14 +207,15 @@ public class Player : MonoBehaviour
                     }
                 }          
 
-
             if (!cleaner.Active) cleaner.Activate();
         }
     }
         else
         {
 
-        }       
+        }
+
+        PlayAnimations(movementInput);
 
         ResetInput();
     }
@@ -208,7 +223,7 @@ public class Player : MonoBehaviour
     private bool CheckIsGround()
     {
         //Debug.DrawLine(transform.position, transform.position -Vector3.up * (distanceGround + 0.1f), Color.red);
-        return (Physics.Raycast(transform.position, -Vector3.up, distanceGround + 0.1f, groundMask));
+        return (Physics.Raycast(transform.position, -Vector3.up, 0.1f, groundMask));
     }
 
     private void ResetInput()
@@ -217,6 +232,48 @@ public class Player : MonoBehaviour
         attack = false;
         interact = false;
         lookInput = Vector3.zero;  
+    }
+
+    private void PlayAnimations(Vector2 movementInput)
+    {
+        if (!attack)
+        {
+            if (movementInput.magnitude > 0)
+            {
+                myAnimator.SetBool("WalkingForward", true);
+                myAnimator.SetBool("WalkingBackWards", false);
+            }
+            else
+            {
+                myAnimator.SetBool("WalkingForward", false);
+                myAnimator.SetBool("WalkingBackWards", false);
+
+            }
+        }
+        else
+        {
+            if (movementInput.magnitude > 0)
+            {
+                float angle = Vector3.Angle(direction, lookDir);
+                if (angle > 90)
+                {
+                    myAnimator.SetBool("WalkingForward", false);
+                    myAnimator.SetBool("WalkingBackWards", true);
+                }
+                else
+                {
+                    myAnimator.SetBool("WalkingForward", true);
+                    myAnimator.SetBool("WalkingBackWards", false);
+                }
+            }
+            else
+            {
+                myAnimator.SetBool("WalkingForward", false);
+                myAnimator.SetBool("WalkingBackWards", false);
+            }
+        }
+
+
     }
 
     public void GetDamage(int damage, Vector3 enemyPosition)
@@ -311,16 +368,16 @@ public class Player : MonoBehaviour
     public void Freeze()
     {
         frozen = true;
-        myCollider.enabled = false;
-        myRigidbody.isKinematic = true;
+        //myCollider.enabled = false;
+        //myRigidbody.isKinematic = true;
         myAudioListener.enabled = false;
     }
 
     public void Unfreeze()
     {
         frozen = false;
-        myCollider.enabled = true;
-        myRigidbody.isKinematic = false;
+        //myCollider.enabled = true;
+        //myRigidbody.isKinematic = false;
         myAudioListener.enabled = true;
     }
 }

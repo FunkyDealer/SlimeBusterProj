@@ -11,16 +11,40 @@
 	<StreamedFiles/>
 	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1063076312">
+		<SoundBank Id="1355168291" Language="SFX" Hash="3521433654">
 			<ObjectPath>Init</ObjectPath>
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="3161908922" Language="SFX" Hash="1602834393">
+		<SoundBank Id="3161908922" Language="SFX" Hash="105163145">
 			<ObjectPath>\SoundBanks\Default Work Unit\Main</ObjectPath>
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<IncludedEvents>
+				<Event Id="3480547451" Name="Play_Boy_Voice" ObjectPath="\Events\Default Work Unit\Voices\Play_Boy_Voice" DurationType="OneShot" DurationMin="0.445449" DurationMax="0.561231">
+					<IncludedMemoryFiles>
+						<File Id="98967674" Language="SFX">
+							<ShortName>Gibberish_Male_E.wav</ShortName>
+							<Path>SFX\Gibberish_Male_E_10C4C929.wem</Path>
+						</File>
+						<File Id="352853422" Language="SFX">
+							<ShortName>Gibberish_Male_U.wav</ShortName>
+							<Path>SFX\Gibberish_Male_U_10C4C929.wem</Path>
+						</File>
+						<File Id="379995323" Language="SFX">
+							<ShortName>Gibberish_Male_A.wav</ShortName>
+							<Path>SFX\Gibberish_Male_A_10C4C929.wem</Path>
+						</File>
+						<File Id="471698719" Language="SFX">
+							<ShortName>Gibberish_Male_I.wav</ShortName>
+							<Path>SFX\Gibberish_Male_I_10C4C929.wem</Path>
+						</File>
+						<File Id="595067604" Language="SFX">
+							<ShortName>Gibberish_Male_O.wav</ShortName>
+							<Path>SFX\Gibberish_Male_O_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="472891535" Name="Play_Energy_Regen_PickUp" ObjectPath="\Events\Default Work Unit\Play_Energy_Regen_PickUp" DurationType="OneShot" DurationMin="2.02" DurationMax="2.02">
 					<IncludedMemoryFiles>
 						<File Id="342022084" Language="SFX">
@@ -78,6 +102,30 @@
 						<File Id="825306661" Language="SFX">
 							<ShortName>FragmentPickUp.wav</ShortName>
 							<Path>SFX\FragmentPickUp_10C4C929.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3245116771" Name="Play_Girl_Voice" ObjectPath="\Events\Default Work Unit\Voices\Play_Girl_Voice" DurationType="OneShot" DurationMin="0.445449" DurationMax="0.561231">
+					<IncludedMemoryFiles>
+						<File Id="12279328" Language="SFX">
+							<ShortName>Gibberish_Female_I.wav</ShortName>
+							<Path>SFX\Gibberish_Female_I_10C4C929.wem</Path>
+						</File>
+						<File Id="13057716" Language="SFX">
+							<ShortName>Gibberish_Female_A.wav</ShortName>
+							<Path>SFX\Gibberish_Female_A_10C4C929.wem</Path>
+						</File>
+						<File Id="400436913" Language="SFX">
+							<ShortName>Gibberish_Female_O.wav</ShortName>
+							<Path>SFX\Gibberish_Female_O_10C4C929.wem</Path>
+						</File>
+						<File Id="425735227" Language="SFX">
+							<ShortName>Gibberish_Female_E.wav</ShortName>
+							<Path>SFX\Gibberish_Female_E_10C4C929.wem</Path>
+						</File>
+						<File Id="709742712" Language="SFX">
+							<ShortName>Gibberish_Female_U.wav</ShortName>
+							<Path>SFX\Gibberish_Female_U_10C4C929.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

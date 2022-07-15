@@ -1017,6 +1017,353 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Voices" ID="{8AB8559B-10E3-4137-BFEC-76C92F5DC8E6}" ShortID="486897651">
+					<ChildrenList>
+						<RandomSequenceContainer Name="Girl Gibberish" ID="{A37C864F-73CC-455D-A08B-E5B68523EDB4}" ShortID="949264253">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8FF52D94-5FD3-4B49-A75D-4FBAC1E485F1}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{8FEAE4D7-F7C2-41B6-93BB-2325E35B8371}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{9F2DE11C-F65A-4394-9AB1-1F62CAC259DF}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Voice" ID="{4D9130B4-B8AE-4258-B379-A77306BECA67}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Gibberish_Female_A" ID="{0AEDDD55-EFE2-488D-8E47-692FB0EE9023}" ShortID="664916769">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Female_A" ID="{65C1B697-A5E5-4AA1-806E-83257AA438E0}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Female_A.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="13057716"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Female_A" ID="{65C1B697-A5E5-4AA1-806E-83257AA438E0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Female_E" ID="{A86D640C-B67F-49C2-B6FC-B0C0CB44C0FC}" ShortID="681106375">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Female_E" ID="{697A066E-A800-421E-AA8C-D7BAF5262679}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Female_E.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="425735227"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Female_E" ID="{697A066E-A800-421E-AA8C-D7BAF5262679}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Female_I" ID="{EB9298F3-7F29-4323-A09B-3586FB6B9C29}" ShortID="657414839">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Female_I" ID="{D9ADC229-140A-4F84-8150-9CE3835F12EA}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Female_I.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="12279328"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Female_I" ID="{D9ADC229-140A-4F84-8150-9CE3835F12EA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Female_O" ID="{44A80633-2FBD-44B3-AA3F-A8C982453411}" ShortID="770364542">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Female_O" ID="{7CDC8A9C-7D43-4FBA-A627-FFF5DBF827DA}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Female_O.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="400436913"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Female_O" ID="{7CDC8A9C-7D43-4FBA-A627-FFF5DBF827DA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Female_U" ID="{51CFEB62-88B4-418C-9DC7-6C7966ED7FE1}" ShortID="298207871">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Female_U" ID="{F4490C4B-F965-4CE9-8AB8-1E0AB972C4E0}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Female_U.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="709742712"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Female_U" ID="{F4490C4B-F965-4CE9-8AB8-1E0AB972C4E0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="boy Gibberish" ID="{162994E7-AB97-4779-8CE8-59AD7ED808FA}" ShortID="672768397">
+							<PropertyList>
+								<Property Name="Highpass" Type="int16">
+									<ValueList>
+										<Value>40</Value>
+									</ValueList>
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{D5738E9A-71AA-4505-B400-97929B3577A8}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A74C1D98-DB01-4805-8007-D703A10A98DF}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{F80D9083-B97B-44F2-A711-D04863C3ABEC}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="200"/>
+													<Property Name="Min" Type="Real64" Value="-200"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Voice" ID="{4D9130B4-B8AE-4258-B379-A77306BECA67}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Gibberish_Male_A" ID="{E6D44B11-09F1-46CD-8238-CAB1EC799B47}" ShortID="951346797">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Male_A" ID="{139C65B3-D5FC-4430-91B0-5EF8657526FC}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Male_A.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="379995323"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Male_A" ID="{139C65B3-D5FC-4430-91B0-5EF8657526FC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Male_E" ID="{35E1A0B2-0A13-4CC9-B0FB-40660B2E9329}" ShortID="935258222">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Male_E" ID="{9A6D7B07-F2AF-422E-B952-11829EC4D915}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Male_E.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="98967674"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Male_E" ID="{9A6D7B07-F2AF-422E-B952-11829EC4D915}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Male_I" ID="{E009EC31-4F1C-480D-BBBA-6087A259270D}" ShortID="217935394">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Male_I" ID="{28217138-EF1C-4E45-B28F-275E38526472}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Male_I.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="471698719"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Male_I" ID="{28217138-EF1C-4E45-B28F-275E38526472}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Male_O" ID="{6688E93E-76BE-4511-A3B0-605D48D4327D}" ShortID="268952778">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Male_O" ID="{76C1A37B-FA75-437E-8B0F-CDDCD369AA1E}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Male_O.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="595067604"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Male_O" ID="{76C1A37B-FA75-437E-8B0F-CDDCD369AA1E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Gibberish_Male_U" ID="{666E7A3E-FF8E-4E1F-A607-CDCFFA51184A}" ShortID="296768466">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{2371DED9-5566-43AF-BFA7-1FF02C16F7F6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Gibberish_Male_U" ID="{E47E59B3-2247-47C9-ABBB-8FF212F5BD40}">
+											<Language>SFX</Language>
+											<AudioFile>Gibberish_Male_U.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="352853422"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists/>
+									<ActiveSourceList>
+										<ActiveSource Name="Gibberish_Male_U" ID="{E47E59B3-2247-47C9-ABBB-8FF212F5BD40}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists/>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

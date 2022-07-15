@@ -263,6 +263,52 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Voices" ID="{0228B822-4362-4AAC-B434-3F7FE6EE0609}" ShortID="394942408">
+					<ChildrenList>
+						<Event Name="Play_Boy_Voice" ID="{08A33532-FE51-4949-BD06-8F1817CBF519}">
+							<ChildrenList>
+								<Action Name="" ID="{7F8E57F7-2895-4BC8-8BF5-8EB7886A5065}" ShortID="149164556">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="boy Gibberish" ID="{162994E7-AB97-4779-8CE8-59AD7ED808FA}" WorkUnitID="{C8736480-DCC0-4D8A-95F5-BB7C8C1632CC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{22CF1A96-31D0-4D95-AAE6-1AF42370F9F6}" ShortID="787308706">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="boy Gibberish" ID="{162994E7-AB97-4779-8CE8-59AD7ED808FA}" WorkUnitID="{C8736480-DCC0-4D8A-95F5-BB7C8C1632CC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Girl_Voice" ID="{48A10CD4-5A19-4DAE-9C2E-6115DCE54090}">
+							<ChildrenList>
+								<Action Name="" ID="{8DAC57D4-EE49-4EA8-A342-D973BE4E20CF}" ShortID="652597432">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Girl Gibberish" ID="{A37C864F-73CC-455D-A08B-E5B68523EDB4}" WorkUnitID="{C8736480-DCC0-4D8A-95F5-BB7C8C1632CC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3B71E41E-5100-43FE-926E-0ED991654702}" ShortID="81767434">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Girl Gibberish" ID="{A37C864F-73CC-455D-A08B-E5B68523EDB4}" WorkUnitID="{C8736480-DCC0-4D8A-95F5-BB7C8C1632CC}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

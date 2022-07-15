@@ -16,6 +16,7 @@
 						<ObjectRef Name="Play_FootSteps" ID="{E0BAD155-1011-46EC-A519-E02C84BC6E8D}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Energy_Station_backGround" ID="{5D9F705D-EB6D-4705-9D94-F2F157B28783}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Energy_Regen_PickUp" ID="{F04D49ED-DB07-4846-BA75-CAEF0B6FC39C}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Boy_Voice" ID="{08A33532-FE51-4949-BD06-8F1817CBF519}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Energy_Station_Charge" ID="{71B4A6B3-8DAD-49E9-8710-EFFED71FB9B0}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Stop_Vacuum" ID="{D2A79A65-6254-4AF5-BC85-21D65AD27BDF}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Level1Track" ID="{DA8F44A1-BCE7-4BA5-AE26-146DD9A1EA37}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
@@ -23,6 +24,7 @@
 						<ObjectRef Name="Play_Jump_Land" ID="{40610C8F-D152-4C07-BD83-3E5AB0284F36}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Vacuum" ID="{347010FC-133F-4C41-A893-2EB562F47525}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_HealthPickUp" ID="{3777CCAA-D00E-4CC0-A470-47BF620CF4B3}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Girl_Voice" ID="{48A10CD4-5A19-4DAE-9C2E-6115DCE54090}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_FragmentPickUp" ID="{41139FD4-7659-4DB6-B91C-AB7CD7CD9290}" WorkUnitID="{74BC70F5-508B-4211-BD41-A5FEAD724B86}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

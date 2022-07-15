@@ -10,8 +10,10 @@ Event	ID	Name			Wwise Object Path	Notes
 	2856985320	Play_HealthPickUp			\Default Work Unit\Play_HealthPickUp	
 	3044255001	Stop_Vacuum			\Default Work Unit\Vacuum\Stop_Vacuum	
 	3206947708	Stop_Level1Track			\Default Work Unit\Music\Stop_Level1Track	
+	3245116771	Play_Girl_Voice			\Default Work Unit\Voices\Play_Girl_Voice	
 	3297008698	Play_Jump_Land			\Default Work Unit\Player\Jump\Play_Jump_Land	
 	3394678998	Play_Energy_Station_backGround			\Default Work Unit\Energy Station\Play_Energy_Station_backGround	
+	3480547451	Play_Boy_Voice			\Default Work Unit\Voices\Play_Boy_Voice	
 	3689126666	Play_Jump			\Default Work Unit\Player\Jump\Play_Jump	
 	3770280562	Play_Slime_Impacts			\Default Work Unit\Slimes\Play_Slime_Impacts	
 	3854155799	Play_FootSteps			\Default Work Unit\Player\Play_FootSteps	
@@ -20,12 +22,15 @@ Event	ID	Name			Wwise Object Path	Notes
 	4226331123	Play_Vacuum			\Default Work Unit\Vacuum\Play_Vacuum	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	12279328	Gibberish_Female_I	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Female_I_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\Girl Gibberish\Gibberish_Female_I		88264
+	13057716	Gibberish_Female_A	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Female_A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\Girl Gibberish\Gibberish_Female_A		88264
 	16830251	Player Hurt 3	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Player Hurt 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hurt Voice\Player Hurt 3		88264
 	28413886	Vacuum Cleaner Loop	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Vacuum Cleaner Loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Vacuum\Vacuum Start\Vacuum Cleaner Loop		970264
 	30408524	Vacuum Cleaner End	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Vacuum Cleaner End_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Vacuum\Vacuum Cleaner End		352864
 	48127726	Jump	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Jump_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\Jump		88264
 	49373084	Player Hurt 1	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Player Hurt 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\Hurt Voice\Player Hurt 1		88264
 	61798196	FootSteps2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\FootSteps2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps2		42640
+	98967674	Gibberish_Male_E	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Male_E_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\boy Gibberish\Gibberish_Male_E		88264
 	99981450	HealthPickUp	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\HealthPickUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUps\Health\HealthPickUp		211744
 	107296982	FootSteps5	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\FootSteps5_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps5		41844
 	191231930	Slimes Walk 3	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Slimes Walk 3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 3		264664
@@ -33,13 +38,20 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	205295464	Slimes Walk 1	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Slimes Walk 1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 1		264664
 	342022084	Energy Regen PickUp	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Energy Regen PickUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUps\Energy Regen PickUp		356392
 	351176319	Energy Regen Station Loop	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Energy Regen Station Loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Energy Regen Station\Energy Station Start\Energy Regen Station Loop		882064
+	352853422	Gibberish_Male_U	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Male_U_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\boy Gibberish\Gibberish_Male_U		88264
 	356702646	Slimes Walk 2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Slimes Walk 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 2		264664
+	379995323	Gibberish_Male_A	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Male_A_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\boy Gibberish\Gibberish_Male_A		88264
+	400436913	Gibberish_Female_O	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Female_O_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\Girl Gibberish\Gibberish_Female_O		88264
+	425735227	Gibberish_Female_E	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Female_E_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\Girl Gibberish\Gibberish_Female_E		88264
+	471698719	Gibberish_Male_I	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Male_I_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\boy Gibberish\Gibberish_Male_I		88264
 	483229021	player Impact Sound 2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\player Impact Sound 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Impacts\player Impact Sound 2		176464
 	525589957	Slime sucked Sound	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Slime sucked Sound_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slime sucked Sound		264664
 	535244137	Energy Station Regen backGround Loop	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Energy Station Regen backGround Loop_D79FB2B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Energy Regen Station\Energy Station Regen backGround Loop		6350464
+	595067604	Gibberish_Male_O	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Male_O_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\boy Gibberish\Gibberish_Male_O		88264
 	659249513	Vacuum Cleaner Start	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Vacuum Cleaner Start_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Vacuum\Vacuum Start\Vacuum Cleaner Start		176464
 	662180827	player Impact Sound 4	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\player Impact Sound 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Impacts\player Impact Sound 4		176464
 	705700893	Slimes Walk 4	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Slimes Walk 4_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Walk\Slimes Walk 4		264664
+	709742712	Gibberish_Female_U	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Gibberish_Female_U_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Voices\Girl Gibberish\Gibberish_Female_U		88264
 	728881695	HealthUp	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\HealthUp_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\PickUps\Health\HealthUp		102804
 	730702024	FootSteps3	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\FootSteps3_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Player\mov\FootSteps\FootSteps3		41628
 	785823841	Slimes Run 2	B:\Unity projects\Slime busters\Slime busters_WwiseProject\.cache\Mac\SFX\Slimes Run 2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Slimes\Run\Slimes Run 2		176464
