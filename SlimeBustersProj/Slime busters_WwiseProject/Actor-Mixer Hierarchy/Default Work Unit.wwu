@@ -433,6 +433,13 @@
 						<Folder Name="mov" ID="{D96FD271-3673-4BC0-AC85-8C6AC2B5FB6D}" ShortID="726360572">
 							<ChildrenList>
 								<RandomSequenceContainer Name="FootSteps" ID="{437C53F8-0948-468B-B80D-913546C95FE1}" ShortID="1004287025">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{55454913-7585-453E-A344-2F16029C8107}"/>

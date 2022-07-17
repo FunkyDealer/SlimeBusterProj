@@ -147,8 +147,13 @@ public class Player : MonoBehaviour
         isGrounded = CheckIsGround();
         if (isGrounded)
         {
-           // if (jumping) AkSoundEngine.PostEvent(3297008698, gameObject); //Play_Jump_Land event
+            // if (jumping) AkSoundEngine.PostEvent(3297008698, gameObject); //Play_Jump_Land event
+            Debug.DrawLine(transform.position + Vector3.up * 0.5f, transform.position - Vector3.up * .8f, Color.green);
             jumping = false;
+        }
+        else
+        {
+            Debug.DrawLine(transform.position + Vector3.up * 0.5f, transform.position - Vector3.up * .8f, Color.red);
         }
 
         if (!beingLaunched)
@@ -222,8 +227,8 @@ public class Player : MonoBehaviour
 
     private bool CheckIsGround()
     {
-        //Debug.DrawLine(transform.position, transform.position -Vector3.up * (distanceGround + 0.1f), Color.red);
-        return (Physics.Raycast(transform.position, -Vector3.up, 0.1f, groundMask));
+        
+        return (Physics.Raycast(transform.position + Vector3.up * 0.5f, -Vector3.up, 0.8f, groundMask));
     }
 
     private void ResetInput()
@@ -379,5 +384,11 @@ public class Player : MonoBehaviour
         //myCollider.enabled = true;
         //myRigidbody.isKinematic = false;
         myAudioListener.enabled = true;
+    }
+
+    public void PlayFootSteps()
+    {
+        if (isGrounded)
+        AkSoundEngine.PostEvent("Play_FootSteps", gameObject);
     }
 }
