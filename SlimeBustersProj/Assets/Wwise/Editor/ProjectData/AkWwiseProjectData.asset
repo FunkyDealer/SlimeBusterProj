@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: d9de71236655af43bfa71ff02c16f7f6
     GuidInternal: 
-    m_lastTime: -8585437068341533283
+    m_lastTime: -8585432008730667505
     List:
     - name: Effects
       guid: 77a847cddf4d7245a8e43b86ad2fbe59
@@ -765,8 +765,36 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 5902bb3631b57e408a21bb91acd78bb3
     GuidInternal: 
-    m_lastTime: -8585460367876129070
-    List: []
+    m_lastTime: -8585432008730577456
+    List:
+    - name: EffectsVolume
+      guid: b671e52693bcc347a3d106163b9e7bc5
+      id: 640585335
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5902bb3631b57e408a21bb91acd78bb3
+      - ElementName: EffectsVolume
+        ObjectType: 13
+        guid: b671e52693bcc347a3d106163b9e7bc5
+      Path: Game Parameters\Default Work Unit\EffectsVolume
+    - name: MusicVolume
+      guid: d9e52c5dbb60224b81fafbd05be93566
+      id: 2346531308
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 5902bb3631b57e408a21bb91acd78bb3
+      - ElementName: MusicVolume
+        ObjectType: 13
+        guid: d9e52c5dbb60224b81fafbd05be93566
+      Path: Game Parameters\Default Work Unit\MusicVolume
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
     PathAndIcons:
@@ -810,7 +838,7 @@ MonoBehaviour:
     m_lastTime: -8585460367876258954
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0100000005000000060000000b0000000c000000ba000000bb000000ee000000ef000000
+  ExpandedWaapiItemIds: 
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

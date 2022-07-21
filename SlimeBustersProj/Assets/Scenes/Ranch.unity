@@ -5910,7 +5910,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!54 &254049857
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11773,7 +11773,7 @@ PrefabInstance:
     - target: {fileID: 1436959353006256381, guid: 129f634706883ce46bfc68c9522fce19,
         type: 3}
       propertyPath: nextScene
-      value: Ranch
+      value: Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 1436959353006256381, guid: 129f634706883ce46bfc68c9522fce19,
         type: 3}

@@ -6,6 +6,11 @@
 				<Sound Name="Level1Track" ID="{7A3E0D0B-E8B1-4387-A68D-8A700F74B5D1}" ShortID="955526147">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-14</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
